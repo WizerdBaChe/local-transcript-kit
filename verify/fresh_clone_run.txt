@@ -1,5 +1,5 @@
 # Fresh-clone acceptance run, 2026-11-22
-# Clone of commit b04f6de into a new scratch folder; HOME, USERPROFILE and CLAUDE_CONFIG_DIR pointed at an
+# Clone of commit 7ecb9da (first run at b04f6de gave the same lines) into a new scratch folder; HOME, USERPROFILE and CLAUDE_CONFIG_DIR pointed at an
 # empty folder inside it; LTM_ROOT empty. reference-impl/runtime/ absent (no speech engine, no weights).
 # Optional dependencies: the controls use none (playwright is only for docs/assets/build_assets.py;
 # media-fetch-read-kit is replaced by verify/fixtures/), so no separate blocked-dependency run applies.
