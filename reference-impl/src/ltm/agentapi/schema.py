@@ -31,7 +31,7 @@ from __future__ import annotations
 import dataclasses
 import re
 import typing
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Mapping, Optional, get_args, get_origin, get_type_hints
 
 from ..core.editscript import ORIGIN_PREFIXES
@@ -321,6 +321,11 @@ class DetectResponse(Response):
     detectors_skipped: tuple[Identifier, ...]
     detectors_failed: tuple[tuple[Identifier, Identifier], ...]
     paths: tuple[str, ...]
+    #: Recognised and deliberately not reported, by reason (`script-variant`).
+    passed_over: Mapping[str, float] = field(default_factory=dict)
+    #: Cues by Chinese script (`hant`, `hans`, `none`); empty unless
+    #: `script-switch` ran.
+    script_cues: Mapping[str, float] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)

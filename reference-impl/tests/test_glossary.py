@@ -151,12 +151,15 @@ def test_mutation_whole_skeleton_comparison_lets_nonsense_through(monkeypatch):
     assert len(soundalike.find(text, L)) == 1
 
 
-@pytest.mark.parametrize("name, expected", [("cond=False", 8), ("cond=True", 7)])
+@pytest.mark.parametrize("name, expected", [("cond=False", 7), ("cond=True", 7)])
 def test_a_recording_with_no_photonics_in_it_stays_nearly_quiet(name, expected):
     """The in-repo decodes are real speech about something else. The blind
     photonics lexicon's hits there are its false-positive floor, PINNED at the
     measured value so a looser rule shows up as a number, not as a feeling
-    (659 and 936 cues; the hits are listed in the design doc §5.3)."""
+    (659 and 936 cues; the hits are listed in the design doc §5.3).
+
+    cond=False was 8 until 2026-11-23: one of the eight was 「模拟」, the term
+    模擬 written in simplified characters, which `same_word` now passes over."""
     rec = decodes.in_repo()[name]
     L = lex("photonics")
     assert sum(len(soundalike.find(c.text, L)) for c in rec.cues) == expected
@@ -193,6 +196,60 @@ def test_a_declared_wrong_form_proposes_a_replace_and_a_sound_alike_does_not():
     assert plan.summary.proposals == {}        # BR-5 counts deletions only
     source = {c.id: c.text for c in rec.cues}
     assert editscript.prove(source, plan.script)
+
+
+# --- script variants (2026-11-23) ---------------------------------------------
+# A lexicon term the decoder wrote in simplified characters is the right word:
+# passed over and COUNTED, never a finding (user ruling 2026-11-23, 靜默計數).
+# Rung 0 examples, two-sided, plus a mutation control whose asserted count moves.
+
+VARIANT_LEX = lexicon.parse({"format": lexicon.FORMAT, "entries": [
+    {"term": t, "source": "domain"}
+    for t in ("驗收", "學務處", "選課", "頭髮", "假單", "以後", "啟示")]})
+
+#: Known-false for the finder: the term in simplified characters (發 and 后 have
+#: two traditional forms; 启 is 啟 only through OpenCC's Taiwan variants).
+SIMPLIFIED_RIGHT = ["今天验收完了", "去学务处问", "下周选课", "他的头发", "这个启示"]
+#: Known-true: a different word that sounds alike, in either script. 發 and 后
+#: are themselves correct traditional characters, so they never stand in.
+STILL_WRONG = ["這張价单", "頭發很長", "以后再說", "瑞士起示"]
+
+
+@pytest.mark.parametrize("text", SIMPLIFIED_RIGHT)
+def test_known_false_a_term_in_simplified_characters_is_no_hit(text):
+    seen: list[tuple[int, int]] = []
+    assert soundalike.find(text, VARIANT_LEX, variants=seen) == []
+    assert len(seen) == 1
+
+
+@pytest.mark.parametrize("text", STILL_WRONG)
+def test_known_true_a_sound_alike_in_either_script_is_still_a_hit(text):
+    seen: list[tuple[int, int]] = []
+    assert len(soundalike.find(text, VARIANT_LEX, variants=seen)) == 1
+    assert seen == []
+
+
+def test_the_variant_rule_is_what_silences_them(monkeypatch):
+    """Mutation control: with `same_word` disabled the asserted count moves from
+    0 to one hit per text (the 2026-11-22 behaviour)."""
+    def hits() -> int:
+        return sum(len(soundalike.find(t, VARIANT_LEX)) for t in SIMPLIFIED_RIGHT)
+    assert hits() == 0
+    monkeypatch.setattr(soundalike, "same_word", lambda w, t: False)
+    assert hits() == len(SIMPLIFIED_RIGHT)
+
+
+def test_a_passed_over_variant_is_counted_in_the_summary_not_reported():
+    rec = _recording_with(["今天验收完了", "這張价单", "去学务处问"])
+    plan, _ = detectors.run(rec, enabled=("glossary",), lex=VARIANT_LEX)
+    assert plan.summary.passed_over == {"script-variant": 2}
+    spans = {(f.span.cue_id, f.span.char_start) for f in plan.findings}
+    assert (rec.cues[1].id, 2) in spans
+    assert all(f.span.cue_id not in (rec.cues[0].id, rec.cues[2].id)
+               for f in plan.findings)
+    # Absent, not zero, when glossary did not run (PIM §5.5 absence vs zero).
+    plan2, _ = detectors.run(rec, enabled=("engine-loop",))
+    assert plan2.summary.passed_over == {}
 
 
 def test_inv8_still_refuses_a_delete_from_glossary(monkeypatch):

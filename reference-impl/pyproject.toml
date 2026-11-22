@@ -35,7 +35,8 @@ where = ["src"]
 [tool.setuptools.package-data]
 # `glossary` reads its pronunciation table at run time; without it an installed
 # `ltm` fails on the first lexicon. The MIT notice travels with the table.
-ltm = ["AGENTS.md", "detect/data/syllables.tsv", "detect/data/NOTICE-pypinyin.txt"]
+ltm = ["AGENTS.md", "detect/data/syllables.tsv", "detect/data/NOTICE-pypinyin.txt",
+       "detect/data/simplified_variants.tsv", "detect/data/NOTICE-opencc.txt"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

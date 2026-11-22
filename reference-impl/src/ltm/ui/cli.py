@@ -364,6 +364,10 @@ FINDING_SENTENCE = {
                       "dropped speech here (I-27), or it is a real silence -- "
                       "listen, and if someone is talking re-decode that span "
                       "with --no-vad or a lower --vad-threshold",
+    "script-switch": "from here the text is in the other Chinese script than "
+                     "the one expected: the words may be right, but the decoder "
+                     "changed mode here, which often goes with a misjudged "
+                     "language -- read this run more carefully",
 }
 
 
@@ -579,6 +583,10 @@ def build_parser() -> argparse.ArgumentParser:
                         metavar="PATH",
                         help="a correction lexicon (ltm-lexicon/1 JSON) on top of "
                              "the ones in <root>/_詞表/; turns glossary on")
+    detect.add_argument("--script", choices=("hant", "hans"), default=None,
+                        help="the Chinese script you expect (default hant); "
+                             "turns script-switch on, which flags runs of the "
+                             "other script and never converts text")
     detect.add_argument("--word-level", action="store_true",
                         help="fails in milestone 1, naming the absent layer (T-1)")
 
@@ -675,7 +683,7 @@ def _args_for(ns: argparse.Namespace) -> dict[str, Any]:
         enabled = tuple(ns.enable) if ns.enable else detectors.DEFAULT
         return {"run": ns.run, "rev": ns.rev, "enabled": enabled,
                 "terms": _terms(ns.term), "word_level": ns.word_level,
-                "lexicons": tuple(ns.lexicon or ())}
+                "lexicons": tuple(ns.lexicon or ()), "script": ns.script}
     if verb in ("plan", "show"):
         return {"run": ns.run, "rev": ns.rev}
     if verb == "accept":

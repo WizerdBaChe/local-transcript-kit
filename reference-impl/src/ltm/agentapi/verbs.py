@@ -38,7 +38,7 @@ from typing import Any, Callable, Literal, Mapping, Optional, Sequence
 from ..core import editscript, ids, model
 from ..core import progress as progress_module
 from ..core.progress import Cancellation, ProgressEvent, ack, refusal_code
-from ..detect import detectors, langmap, thresholds
+from ..detect import detectors, langmap, scriptform, thresholds
 from ..detect import lexicon as lexicon_module
 from ..engine import contract, runner
 from ..store import came_from, layout, place, write
@@ -534,7 +534,8 @@ def detect(ctx: Context, *, run: str, rev: Optional[str] = None,
            enabled: tuple[str, ...] = detectors.DEFAULT,
            terms: Optional[Mapping[str, tuple[str, ...]]] = None,
            word_level: bool = False,
-           lexicons: tuple[str, ...] = ()) -> schema.DetectResponse:
+           lexicons: tuple[str, ...] = (),
+           script: Optional[str] = None) -> schema.DetectResponse:
     """Re-run detection over a revision's measured layers and place a new round.
 
     It reads the recording back from the plan record rather than keeping one in
@@ -549,6 +550,9 @@ def detect(ctx: Context, *, run: str, rev: Optional[str] = None,
     the baseline -- engineering numbers, cheap to keep, and they are the state the
     verdicts were measured against (§7 case 2).
     """
+    # A value outside the closed set is refused before any store is read.
+    if script is not None and script not in scriptform.SCRIPTS:
+        raise AgentError("bad-argument", "script")
     rev, data = _read_plan(ctx, run, rev)
     rec = _recording_of(data)
     # `lexicons` turns `glossary` on: naming a lexicon and not wanting it read
@@ -557,6 +561,9 @@ def detect(ctx: Context, *, run: str, rev: Optional[str] = None,
     enabled = tuple(enabled)
     if lexicons and "glossary" not in enabled:
         enabled += ("glossary",)
+    # Same rule for `script`: naming the expected script turns `script-switch` on.
+    if script is not None and "script-switch" not in enabled:
+        enabled += ("script-switch",)
     lex = freq = None
     if "glossary" in enabled:
         try:
@@ -569,6 +576,7 @@ def detect(ctx: Context, *, run: str, rev: Optional[str] = None,
     try:
         plan_obj, _verdicts = detectors.run(
             rec, enabled=enabled, terms=terms, lex=lex, freq=freq,
+            expect_script=script or scriptform.DEFAULT_SCRIPT,
             word_level=word_level,
             on_step=_detect_steps(ctx), cancel=ctx.cancellation, run_id=rev)
     except progress_module.Cancelled as e:
@@ -593,7 +601,9 @@ def detect(ctx: Context, *, run: str, rev: Optional[str] = None,
         detectors_skipped=idents(s.detectors_skipped),
         detectors_failed=tuple((ident(a), ident(b))
                                for a, b in s.detectors_failed),
-        paths=_paths_of(paths))
+        paths=_paths_of(paths),
+        passed_over={k: float(v) for k, v in s.passed_over.items()},
+        script_cues={k: float(v) for k, v in s.script_cues.items()})
 
 
 # --- plan / runs / show / open ------------------------------------------
@@ -977,6 +987,12 @@ def _plan_json(plan_obj: model.Plan, rec: model.Recording) -> str:
         "unverified": dict(plan_obj.summary.unverified),
         "detectors_skipped": list(plan_obj.summary.detectors_skipped),
         "detectors_failed": [list(x) for x in plan_obj.summary.detectors_failed],
+        # Counts only (`script-variant`: lexicon terms written in simplified
+        # characters, recognised and not reported). Absent key = not run.
+        "passed_over": dict(plan_obj.summary.passed_over),
+        # Cues by Chinese script, from `script-switch`; absent = it did not run.
+        **({"script_cues": dict(plan_obj.summary.script_cues)}
+           if plan_obj.summary.script_cues else {}),
         "recording": _recording_json(rec),
     }, ensure_ascii=False, indent=2) + "\n"
 

@@ -40,6 +40,7 @@ Kind = Literal["wrong", "homophone", "near", "latin"]
 KINDS: tuple[Kind, ...] = ("wrong", "homophone", "near", "latin")
 
 _DATA = pathlib.Path(__file__).resolve().parent / "data" / "syllables.tsv"
+_VARIANTS = pathlib.Path(__file__).resolve().parent / "data" / "simplified_variants.tsv"
 _CJK = re.compile(r"[㐀-䶿一-鿿豈-﫿]")
 _LATIN_WORD = re.compile(r"[A-Za-z]+(?:['’][A-Za-z]+)*")
 #: Words of a Latin window may be separated by spaces or hyphens only.
@@ -110,6 +111,37 @@ def sounds_like(a: str, b: str, fuzzy: bool) -> bool:
         if not rx or rx != reading(y, fuzzy):
             return False
     return True
+
+
+@functools.lru_cache(maxsize=1)
+def simplified_variants() -> dict[str, frozenset[str]]:
+    """Simplified-only character -> the traditional forms it writes
+    (`data/simplified_variants.tsv`, built by `tools/build_simplified_variants.py`
+    from OpenCC, Apache-2.0, notice in `data/NOTICE-opencc.txt`)."""
+    out: dict[str, frozenset[str]] = {}
+    for line in _VARIANTS.read_text(encoding="utf-8").splitlines():
+        ch, _, forms = line.partition("\t")
+        if ch and forms:
+            out[ch] = frozenset(forms.split(","))
+    return out
+
+
+def same_word(window: str, term: str) -> bool:
+    """`window` is `term` written in simplified characters (验收 for 驗收).
+
+    Measured 2026-11-22: faster-whisper switched to simplified output halfway
+    through a talk, and five correctly heard lexicon terms came back as
+    homophone findings because 验 is not 驗. One direction only: a position
+    counts when the characters are equal or the window's is a SIMPLIFIED-ONLY
+    form of the term's. A character that is also a correct traditional one (發,
+    后, 系, 价) never stands in for another (髮, 後, 係, 價) -- 頭發 for 頭髮 is a
+    wrong word in traditional text and stays a finding. The displayed text is
+    never converted; this is a comparison only.
+    """
+    if len(window) != len(term) or window == term:
+        return False
+    table = simplified_variants()
+    return all(x == y or y in table.get(x, ()) for x, y in zip(window, term))
 
 
 def is_cjk_term(term: str) -> bool:
@@ -334,10 +366,16 @@ def _plan(lex: lx.Lexicon) -> tuple[dict[int, list[tuple[int, str, str]]],
     return cjk, latin
 
 
-def find(text: str, lex: lx.Lexicon, kinds: Sequence[Kind] = KINDS) -> list[Hit]:
+def find(text: str, lex: lx.Lexicon, kinds: Sequence[Kind] = KINDS,
+         variants: list[tuple[int, int]] | None = None) -> list[Hit]:
     """Every hit in `text`, non-overlapping, in text order. A declared wrong form
     wins its span over any sound-alike; among sound-alikes the more trusted kind
-    wins, then the longer span, then the earlier one."""
+    wins, then the longer span, then the earlier one.
+
+    A CJK term written in simplified characters (`same_word`) is no hit: it is the
+    correct word. Its span shields like a correct form, and when `variants` is
+    given each such span is appended to it, so the caller can COUNT what was
+    passed over without making a finding of it."""
     taken: list[tuple[int, int]] = []
     out: list[Hit] = []
     if "wrong" in kinds:
@@ -349,6 +387,7 @@ def find(text: str, lex: lx.Lexicon, kinds: Sequence[Kind] = KINDS) -> list[Hit]
     cjk, latin = _plan(lex)
     cands: list[Hit] = []
     cost: dict[int, tuple[int, int]] = {}
+    passed: list[tuple[int, int]] = []
     if cjk and ("homophone" in kinds or "near" in kinds):
         ex = [reading(c, False) for c in text]
         nr = [reading(c, True) for c in text]
@@ -360,6 +399,13 @@ def find(text: str, lex: lx.Lexicon, kinds: Sequence[Kind] = KINDS) -> list[Hit]
                 kx, kn = "|".join(ex[s:s + n]), "|".join(nr[s:s + n])
                 for i, exact, near in terms:
                     if window == lex.entries[i].term:
+                        continue
+                    # Checked only where a sound-alike would fire: a script
+                    # variant reads like its term, and the check costs a lookup.
+                    if ((kx == exact or kn == near)
+                            and same_word(window, lex.entries[i].term)):
+                        if (s, s + n) not in passed:
+                            passed.append((s, s + n))
                         continue
                     if "homophone" in kinds and kx == exact:
                         cands.append(Hit(s, s + n, i, "homophone"))
@@ -386,6 +432,9 @@ def find(text: str, lex: lx.Lexicon, kinds: Sequence[Kind] = KINDS) -> list[Hit]
         rank[cands[k].kind], -(cands[k].end - cands[k].start), cands[k].start,
         cost.get(k, (0, 0)), k))
     cands = [cands[k] for k in order]
+    guard = [*guard, *passed]
+    if variants is not None:
+        variants.extend(passed)
     for h in cands:
         if _overlaps(h.start, h.end, taken) or _straddles(h.start, h.end, guard):
             continue

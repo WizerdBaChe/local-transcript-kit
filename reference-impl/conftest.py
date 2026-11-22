@@ -22,7 +22,7 @@ _NEEDS = {
     "docs/evidence/cond_experiment_segments.json": [
         "tests/test_detect.py", "tests/test_detect_candidates.py", "tests/test_detect_signals.py",
         "tests/test_langmap.py", "tests/test_progress.py", "tests/test_signal_spec_agreement.py",
-        "tests/test_glossary_review.py",
+        "tests/test_glossary_review.py", "tests/test_script_switch.py",
         "tests/test_layering.py::test_the_evidence_scan_has_something_to_scan_and_both_controls_hold"],
     "docs/evidence/glossary_controls_2026-10-30.json": ["tests/test_glossary.py"],
     "docs/psm-transcript-tool-2026-09-09.md": ["tests/test_states.py", "tests/test_invariant_map.py"],

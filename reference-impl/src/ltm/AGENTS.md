@@ -183,6 +183,25 @@ and, when `<root>/_詞表/_字頻/*.csv` exists (columns `字`, `字頻`; the us
 files, never shipped), `evidence.prior` — a character-frequency log ratio that
 RANKS and never decides (measured AUC 0.68).
 
+**A lexicon term written in simplified characters is not a finding** (2026-11-23).
+验收 for 驗收 is the right word in another script: `glossary` passes it over and
+`DetectResponse.passed_over["script-variant"]` (and the plan file's `passed_over`)
+counts how many. The key is present, zero included, whenever `glossary` ran, and
+absent when it did not. One direction only: a character that is itself a correct
+traditional one (發, 后, 系) never stands in for another (髮, 後, 係), so 頭發 for
+頭髮 is still a finding. The displayed text is never converted.
+
+**`script-switch` says where the text left the expected Chinese script**
+(2026-11-23). Enable it by name or by passing `script="hant"|"hans"` (CLI
+`--script`; default expectation `hant`; any other value is `bad-argument` /
+`script`, refused before the store is read). One `info` finding per run of the
+other script (at least 2 cues; cues of neither script do not break a run),
+anchored at offset 0 of the run's first cue, actions `check`/`keep`, never an op.
+Evidence: `cues`, `last` (cue index), `start`, `end`, `simplified`,
+`traditional`, `expect` (0 hant, 1 hans). `DetectResponse.script_cues` (and the
+plan file's `script_cues`) counts cues by script (`hant`, `hans`, `none`); empty
+when the detector did not run. Not in the default set.
+
 **A sound-alike's replace is a dormant candidate** (2026-10-30). `PlanResponse.
 candidates` lists them, position and code only, in the order `accept` indexes.
 `accept` never applies a candidate it was not given: `candidates=(N, ...)` applies

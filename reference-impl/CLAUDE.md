@@ -45,6 +45,7 @@ there.
 | `docs/breeze-eval-2026-10-22.md` | Breeze ASR 25 vs large-v3 (and a glossary prompt) measured on ASCEND, synthetic lab sentences and the corpus. **M2 was reopened at minimum size for it** (its named reopen condition: someone wants to compare two models' accuracy). Three decisions open in its §7; the converted model sits in `runtime/models/breeze-asr-25-ct2-fp16/` and is not wired into any default |
 | `docs/design-divergence-map-2026-10-22.md` | Cross-check layer 1 (divergence map), Breeze as the companion decoder beside large-v3. Concept + PIM amendment (INV-24..INV-33); **the verification gate passed** (round 4 B, round 5 A; all reports are `docs/verification_divergence-map_2026-10-22_*.md`); user rulings in its frontmatter and §11; build cards are PSM §21; nothing built yet. Its numbers come from `docs/evidence/divergence_{probe,blockwise,gold_lab2}_2026-10-22.*`; the §9 falsifier ran on a user-corrected reference kept outside the repo (R1) |
 | `docs/glossary-lexicon-2026-10-30.md` | The text-layer correction lexicon and the `glossary` detector that reads it: user rulings (lexicons in `<root>/_詞表/`; a declared wrong form carries a replace op, a sound-alike only flags), the INV-9 control pair, and the measurement against the 2026-10-30 talk's 101 hand corrections. **Its §5.1 says the ceiling: only 31 of 96 errors have a lexicon term as their correct form** |
+| `docs/prior-art-tw-speech-2026-11-23.md` | An external dataset (voidful/tw-speech, Taiwan-Mandarin speech with machine-made labels) read from its card only and **skipped** by user ruling: no human reference, gated, 4.43 TB, no licence. Names what would reopen it |
 | `docs/prior-art-audio-preprocessing-2026-09-27.md` | An outsourced survey of audio pre-processing before ASR (VAD, loudness, denoising, dereverberation, gating). **Its header names the three claims verified and one it gets backwards** (the VAD-default "fix" for a deleted quiet speaker) |
 
 **Version numbers live in each document's own header, and nowhere else.**
@@ -174,6 +175,15 @@ from** (PSM §22, cards P-1..P-4; user rulings for the public edition
 Generic by design: the mfp binding is an agent recipe (`skill/SKILL.md`), and R5,
 R8 and R10 are unchanged. Outside the verification gate; the PIM amendments owed
 are named in §22's banner.
+
+**2026-11-23: script, two ways** (`docs/glossary-lexicon-2026-10-30.md` §15–§16,
+user rulings). `glossary` passes over a lexicon term written in simplified
+characters and counts it (`passed_over.script-variant`); a new detector
+`script-switch` (not in `DEFAULT`, `--script hant|hans`, default `hant`) flags
+runs of the other Chinese script and the plan summary counts cues by script.
+Both read one table, `src/ltm/detect/data/simplified_variants.tsv` (OpenCC,
+Apache-2.0). The text is never converted. Latin-script language confusion (I-29)
+is the 2026-10-21 pipeline proposal's S3, not built. Outside the verification gate.
 
 **Round 12 ran on 2026-09-16 against v1.4** (`..._R12a.md`, `..._R12b.md`),
 BLOCKED six ways, all answered in **v1.5**. **Round 13 ran the same day against

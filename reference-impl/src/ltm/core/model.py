@@ -11,7 +11,7 @@ condition that cannot arise is green forever.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Literal, Mapping, Optional, Sequence
 
 if TYPE_CHECKING:                      # annotations only; core.editscript
@@ -341,6 +341,13 @@ class PlanSummary:
     detectors_skipped: tuple[str, ...]
     detectors_failed: tuple[tuple[str, str], ...]  # (detector, reason)
     engine_health: Mapping[str, object]
+    #: What a detector recognised and deliberately did NOT report, by reason
+    #: (`script-variant`: a lexicon term written in simplified characters). A
+    #: count, never a finding; a missing key means the detector did not run.
+    passed_over: Mapping[str, int] = field(default_factory=dict)
+    #: Cues by Chinese script (`hant`, `hans`, `none`), from `script-switch`;
+    #: empty when that detector did not run.
+    script_cues: Mapping[str, int] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         # Absence and zero must stay distinguishable (PIM section 5.5):

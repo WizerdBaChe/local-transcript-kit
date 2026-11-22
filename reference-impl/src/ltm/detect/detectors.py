@@ -39,14 +39,15 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from typing import Callable, Iterator, Literal, Mapping, Optional, Protocol, Sequence
+from typing import (Any, Callable, Iterator, Literal, Mapping, Optional, Protocol,
+                    Sequence)
 
 from ..core import editscript, model, progress
 from . import candidates as cand
 from . import lexicon
 from . import score as scoring
 from . import soundalike as sa
-from . import signals, thresholds
+from . import scriptform, signals, thresholds
 
 #: The default set: the detectors with a control pair from real audio (INV-9).
 #: `sparse-cue` joined on 2026-09-27 after its pair held on the real engine --
@@ -462,6 +463,58 @@ class UncoveredSpan:
             yield i, tuple(at.get(i, ()))
 
 
+class ScriptSwitch:
+    """Where the transcript left the Chinese script the reader expects.
+
+    One info finding per run of the other script (`scriptform.other_runs`),
+    anchored at offset 0 of the run's first cue, with the run's size, time and
+    character counts. No edit, ever: the product does not convert scripts, and
+    the words in the run may be right. `cues` (by script) is what `run` puts in
+    `PlanSummary.script_cues`.
+
+    Controls (INV-9), on stored real decodes: two all-traditional decodes give
+    no run, decodes that switched give theirs, and the same text with the
+    expected script flipped flags the other side
+    (`docs/evidence/script_switch_controls_2026-11-23.txt`).
+    """
+
+    name = "script-switch"
+    may_delete = False
+
+    def __init__(self, expect: str = scriptform.DEFAULT_SCRIPT) -> None:
+        if expect not in scriptform.SCRIPTS:
+            raise DetectError(f"script must be one of {scriptform.SCRIPTS}")
+        self.expect = expect
+        self.cues: dict[str, int] = {}
+
+    def scan(self, rec: model.Recording,
+             thr: Optional[thresholds.Thresholds]) -> Iterator[Step]:
+        labels = [scriptform.label(c.text) for c in rec.cues]
+        self.cues = {k: labels.count(k) for k in ("hant", "hans", "none")}
+        at: dict[int, Verdict] = {}
+        for first, last, n in scriptform.other_runs(labels, self.expect):
+            s = t = 0
+            for c in rec.cues[first:last + 1]:
+                a, b = scriptform.counts(c.text)
+                s, t = s + a, t + b
+            cue = rec.cues[first]
+            at[first] = Verdict(
+                "finding", self.name, (first, last), 1,
+                finding=model.Finding(
+                    id=f"{self.name}:{first}",
+                    span=model.Span(cue.id, 0, 0),
+                    code=self.name, severity="info", unit="cue",
+                    evidence=model.Evidence.of(
+                        "cue", cues=float(n), last=float(last),
+                        start=round(cue.start, 3),
+                        end=round(rec.cues[last].end, 3),
+                        simplified=float(s), traditional=float(t),
+                        expect=float(scriptform.SCRIPTS.index(self.expect))),
+                    actions=("check", "keep")))
+        for i in range(len(rec.cues)):
+            yield i, ((at[i],) if i in at else ())
+
+
 class Declared:
     """`filler` and `glossary`: the declared list is an UPPER BOUND (INV-7).
 
@@ -544,14 +597,24 @@ class Glossary:
         self.lexicon = lex
         self.freq = freq
 
+    #: Lexicon terms found written in simplified characters in the last scan
+    #: (`soundalike.same_word`). Not findings -- the word is right -- but counted
+    #: into `PlanSummary.passed_over["script-variant"]`, so a reader can see the
+    #: rule worked and how often (user ruling 2026-11-23: 靜默計數).
+    passed_over = 0
+
     def scan(self, rec: model.Recording,
              thr: Optional[thresholds.Thresholds]) -> Iterator[Step]:
         lex = self.lexicon
+        self.passed_over = 0
         for i, cue in enumerate(rec.cues):
             out: list[Verdict] = []
             if lex.entries:
                 case = GLOSSARY_SCRIPT[sa.case_of(cue.text)]
-                for h in sa.find(cue.text, lex):
+                variants: list[tuple[int, int]] = []
+                hits = sa.find(cue.text, lex, variants=variants)
+                self.passed_over += len(variants)
+                for h in hits:
                     entry = lex.entries[h.entry]
                     span = model.Span(cue.id, h.start, h.end)
                     declared = h.kind == "wrong"
@@ -600,10 +663,12 @@ def _without_op(v: Verdict) -> Verdict:
 def build(enabled: Sequence[str] = DEFAULT,
           terms: Optional[Mapping[str, Sequence[str]]] = None,
           lex: Optional[lexicon.Lexicon] = None,
-          freq: Optional[Mapping[str, int]] = None) -> list[Detector]:
+          freq: Optional[Mapping[str, int]] = None,
+          script: str = scriptform.DEFAULT_SCRIPT) -> list[Detector]:
     """`terms["glossary"]` adds correct forms to `lex` (sound-alikes only, no
     declared wrong forms): `--term glossary=光纖` is the one-word lexicon.
-    `freq` is a character-frequency table for `glossary`'s `prior` evidence."""
+    `freq` is a character-frequency table for `glossary`'s `prior` evidence.
+    `script` is the script `script-switch` expects (`hant` or `hans`)."""
     terms = dict(terms or {})
     stray = [k for k in terms if k not in DECLARED]
     if stray:
@@ -620,6 +685,8 @@ def build(enabled: Sequence[str] = DEFAULT,
             out.append(SparseCue())
         elif name == "uncovered-span":
             out.append(UncoveredSpan())
+        elif name == "script-switch":
+            out.append(ScriptSwitch(script))
         elif name == "glossary":
             extra = lexicon.Lexicon(tuple(
                 lexicon.Entry(term=t.strip(), source="human")
@@ -670,6 +737,7 @@ def run(rec: model.Recording, *, enabled: Sequence[str] = DEFAULT,
         terms: Optional[Mapping[str, Sequence[str]]] = None,
         lex: Optional[lexicon.Lexicon] = None,
         freq: Optional[Mapping[str, int]] = None,
+        expect_script: str = scriptform.DEFAULT_SCRIPT,
         thr: Optional[thresholds.Thresholds] = None,
         word_level: bool = False,
         on_step: Optional[Callable[[str, int, int], None]] = None,
@@ -712,12 +780,20 @@ def run(rec: model.Recording, *, enabled: Sequence[str] = DEFAULT,
     # plan, not a detector failure and not an exception out of this function.
     if thr is None and rec.cues:
         thr = thresholds.of(rec)
-    detectors = (build(enabled, terms, lex, freq=freq) if freq
-                 else build(enabled, terms, lex))
+    # Optional arguments are passed only when set: tests stand in for `build`
+    # with the three-argument shape, and that shape stays the default call.
+    extra: dict[str, Any] = {}
+    if freq:
+        extra["freq"] = freq
+    if expect_script != scriptform.DEFAULT_SCRIPT:
+        extra["script"] = expect_script
+    detectors = build(enabled, terms, lex, **extra)
     total = len(rec.cues)
 
     verdicts: list[Verdict] = []
     failed: list[tuple[str, str]] = []
+    passed_over: dict[str, int] = {}
+    script_cues: dict[str, int] = {}
     for det in detectors:
         mine: list[Verdict] = []
         try:
@@ -757,6 +833,11 @@ def run(rec: model.Recording, *, enabled: Sequence[str] = DEFAULT,
                 f"INV-8: {det.name} produced {bad} ops; it may produce "
                 f"{sorted(allowed) or 'none'}")
         verdicts.extend(mine)
+        if isinstance(det, Glossary):
+            # Written whenever glossary ran, zero included: absent = not run.
+            passed_over["script-variant"] = det.passed_over
+        if isinstance(det, ScriptSwitch):
+            script_cues = dict(det.cues)
 
     # Deletes are merged first, so a replace landing in a cue a delete removes
     # is the one that yields -- visibly, through `_without_op`, never by letting
@@ -813,7 +894,8 @@ def run(rec: model.Recording, *, enabled: Sequence[str] = DEFAULT,
         engine_health={"vad_enabled": rec.report.vad_enabled,
                        "vad_verdict": rec.report.vad_verdict(),
                        "multilingual": rec.report.multilingual,
-                       "degenerated": rec.report.degenerated})
+                       "degenerated": rec.report.degenerated},
+        passed_over=passed_over, script_cues=script_cues)
     plan = model.Plan(run=run_id, findings=findings, notes=notes,
                       script=script, summary=summary,
                       candidates=tuple(candidates))
