@@ -1,0 +1,21 @@
+{
+  "format": "ltm-lexicon/1",
+  "name": "campus-systems-demo",
+  "entries": [
+    {"term": "入口網站", "source": "slide", "note": "terms picked from the narration's own script; no wrong forms declared"},
+    {"term": "假單", "source": "slide"},
+    {"term": "假別", "source": "slide"},
+    {"term": "錯誤頁", "source": "slide"},
+    {"term": "人事室", "source": "slide"},
+    {"term": "需求文件", "source": "slide"},
+    {"term": "驗收", "source": "slide"},
+    {"term": "學務處", "source": "slide"},
+    {"term": "選課", "source": "slide"},
+    {"term": "尖峰", "source": "slide"},
+    {"term": "重試", "source": "slide"},
+    {"term": "亞穩態", "source": "slide"},
+    {"term": "瑞士起司", "source": "slide"},
+    {"term": "舊系統", "source": "slide"},
+    {"term": "Conway", "case": true, "source": "slide"}
+  ]
+}

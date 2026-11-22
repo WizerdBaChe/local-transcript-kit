@@ -1,0 +1,4 @@
+# verify/run_controls.py and the shipped test suite. The product itself needs nothing beyond Python 3.12.
+pytest==9.1.1
+# docs/assets/build_assets.py only (README pictures); then: python -m playwright install chromium
+# playwright==1.62.0

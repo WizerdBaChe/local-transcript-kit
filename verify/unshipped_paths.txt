@@ -1,0 +1,61 @@
+# Origin paths that shipped text cites but this repository does not ship. One path per line, a tab, a reason class.
+# Paths only, no content. Produced by the maintainer's path census against the origin (local-transcript-maker @ 0e3728c), 2026-11-22.
+# Reason classes:
+#   measured-evidence  a measurement of the author's real recordings (other people's speech), or a script that produced one;
+#                      the code comments cite it as the source of a constant; tests that need it are not collected here
+#   origin-history     design records (concept, PIM/PSM build spec, ADRs, UAT, verification rounds, guides) of the origin
+#   origin-tool        a design-time tool of the origin (experimental or for its own records)
+#   shipped-short-form a path written relative to the origin root in a shipped note; the file ships at the bracketed path
+
+docs/adr-gui-stack-2026-09-10.md	origin-history
+docs/architecture-2026-09-09.md	origin-history
+docs/breeze-eval-2026-10-22.md	origin-history
+docs/concept-transcript-tool-2026-09-08.md	origin-history
+docs/design-divergence-map-2026-10-22.md	origin-history
+docs/evidence/baseline_segments_2026-09-08.json	measured-evidence
+docs/evidence/compute_type_cost_2026-09-17.txt	measured-evidence
+docs/evidence/cond_experiment_segments.json	measured-evidence
+docs/evidence/decode_variance_2026-09-16.txt	measured-evidence
+docs/evidence/glossary_cases_2026-10-30.txt	measured-evidence
+docs/evidence/glossary_controls_2026-10-30.json	measured-evidence
+docs/evidence/gui4_dom_run_2026-09-16.md	measured-evidence
+docs/evidence/langmap_probe_2026-09-09.py	measured-evidence
+docs/evidence/langmap_truth_2026-09-09.py	measured-evidence
+docs/evidence/positive_control_2026-09-09.txt	measured-evidence
+docs/evidence/README.md	measured-evidence
+docs/evidence/s4_threshold_sweep_2026-09-09.txt	measured-evidence
+docs/evidence/sidecar_stdin_deadlock_2026-09-09.txt	measured-evidence
+docs/evidence/sidecar_streaming_2026-09-09.md	measured-evidence
+docs/evidence/signal_spec_2026-09-09.py	measured-evidence
+docs/evidence/signal_spec_2026-09-09.txt	measured-evidence
+docs/evidence/sparse_cue_controls_2026-09-27.txt	measured-evidence
+docs/evidence/stretch_agreement_2026-09-09.py	measured-evidence
+docs/evidence/threshold_families_2026-09-09.py	measured-evidence
+docs/evidence/threshold_families_2026-09-09.txt	measured-evidence
+docs/evidence/two_conditions_2026-09-09.txt	measured-evidence
+docs/evidence/uncovered_span_controls_2026-10-21.txt	measured-evidence
+docs/evidence/vadseconds_2026-09-09.py	measured-evidence
+docs/first-run-2026-09-10.md	origin-history
+docs/gate-operations-2026-09-09.md	origin-history
+docs/glossary-lexicon-2026-10-30.md	origin-history
+docs/guide-2026-09-11.md	origin-history
+docs/handoff-local-transcript-maker-2026-09-09.md	origin-history
+docs/issues-2026-09-09.md	origin-history
+docs/m1-silence-probe-2026-09-27.md	origin-history
+docs/multilingual-verdict-2026-09-11.md	origin-history
+docs/pim-transcript-tool-2026-09-08.md	origin-history
+docs/prior-art-audio-preprocessing-2026-09-27.md	origin-history
+docs/prior-art-threads-six-asr-2026-09-27.md	origin-history
+docs/prior-art-whisper-2026-09-10.md	origin-history
+docs/psm-transcript-tool-2026-09-09.md	origin-history
+docs/uat-2026-09-09.md	origin-history
+docs/uat-audio-corpus-2026-09-10.md	origin-history
+docs/verification_pim-v1.2_2026-09-11_K.md	origin-history
+docs/verification_pim-v1.3_2026-09-16_M.md	origin-history
+src/ltm/agentapi/schema.py	shipped-short-form [reference-impl/src/ltm/agentapi/schema.py]
+src/ltm/core/editscript.py	shipped-short-form [reference-impl/src/ltm/core/editscript.py]
+src/ltm/detect/data/NOTICE-pypinyin.txt	shipped-short-form [reference-impl/src/ltm/detect/data/NOTICE-pypinyin.txt]
+src/ltm/detect/score.py	shipped-short-form [reference-impl/src/ltm/detect/score.py]
+src/ltm/ui/read.py	shipped-short-form [reference-impl/src/ltm/ui/read.py]
+tools/burnsub_lexicon.py	origin-tool
+tools/pim_struct_check.py	origin-tool

@@ -1,0 +1,7 @@
+ENV  python 3.12.7, pytest 9.1.1
+PASS K1 shipped suite: passed 516, failed 0, skipped 5; not collected: 11 module(s)
+PASS K2 layering control: failures shipped=0 (passed 86), planted urllib import=2
+PASS K3 mfp->ltm recipe: no captions: exit 0, came_from rows 1; uploader captions: exit 10, rows 0
+PASS K4 no free text in --json: URL in prose face=True, URL in --json=False, came_from_count=1.0
+PASS K5 output root: LTM_ROOT set -> desk; unset -> home/TranscriptDesk
+SUMMARY: 5/5 controls pass

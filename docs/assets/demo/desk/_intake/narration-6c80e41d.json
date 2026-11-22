@@ -1,0 +1,14 @@
+{
+  "schema": "ltm/origin/2",
+  "run": "narration-6c80e41d",
+  "source": "recording/narration.wav",
+  "sha256": "6c80e41dca2640801ee12b61027d880d6bdf944016a278dc1a6518d7363a9a31",
+  "bytes": 149251782.0,
+  "came_from": [
+    {
+      "url": "https://www.youtube.com/watch?v=vZR_pWiOGz4",
+      "note": "own narration, hero demo",
+      "at": "2026-11-22T09:29:50+00:00"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+# local-transcript-kit
+
+> Local speech-to-text on Windows (faster-whisper large-v3 in a separate interpreter) that marks the sentences
+> of a transcript that should not be trusted, and why: repeats, decoder self-reported anomalies, sound-alikes of
+> glossary terms. Standard-library Python product, no network, no LLM call, revisions never overwritten.
+> Release v1.0.0: https://github.com/WizerdBaChe/local-transcript-kit/tree/v1.0.0
+
+## Read-only route (no execution needed)
+
+- [docs/EVIDENCE.md](docs/EVIDENCE.md): what was measured, the enforcement map (file:line), what is not claimed
+- [verify/controls_run.txt](verify/controls_run.txt): the recorded acceptance run (5 controls)
+- [reference-impl/src/ltm/AGENTS.md](reference-impl/src/ltm/AGENTS.md): the calling contract (verbs, responses, invariants)
+- [docs/assets/demo/desk](docs/assets/demo/desk): a real run record (plan, findings, transcript) of the author's own narration
+
+## Start here
+
+- [AGENTS.md](AGENTS.md): facts first, then install steps for an agent
+- [README.en.md](README.en.md): overview in English ([README.md](README.md) is the Traditional Chinese original)
+- [docs/BUILD-SPEC.md](docs/BUILD-SPEC.md): layout, contract, declared edits
+
+## Integration
+
+- [verify/recipe_mfp_to_ltm.py](verify/recipe_mfp_to_ltm.py): from a post URL via media-fetch-read-kit to `ltm intake --from-url` (optional)
+- [reference-impl/skill/SKILL.md](reference-impl/skill/SKILL.md): a skill file for coding agents
+
+## Optional
+
+- [docs/DEVELOPER.md](docs/DEVELOPER.md): structure, diagrams, manual acceptance (Traditional Chinese)
+- [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md): licences
+- [CHANGELOG.md](CHANGELOG.md)
