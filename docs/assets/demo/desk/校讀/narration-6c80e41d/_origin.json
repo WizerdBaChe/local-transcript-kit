@@ -7,7 +7,7 @@
     "content_sha256": "6c80e41dca2640801ee12b61027d880d6bdf944016a278dc1a6518d7363a9a31",
     "bytes": 149251782
   },
-  "high_water": 1,
+  "high_water": 2,
   "decode": {
     "r000": {
       "condition_on_previous_text": false,
@@ -60,6 +60,16 @@
         "plan"
       ],
       "created_at": "2026-11-22T09:34:33Z",
+      "face": "human"
+    },
+    {
+      "serial": "r002",
+      "source": "r000",
+      "members": [
+        "finding",
+        "plan"
+      ],
+      "created_at": "2026-11-22T18:36:42Z",
       "face": "human"
     }
   ],

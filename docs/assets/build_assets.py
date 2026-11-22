@@ -16,6 +16,7 @@ docs/assets/capture_demo_desk.py copied it from a real run once.
 """
 from __future__ import annotations
 
+import json
 import os
 import re
 import subprocess
@@ -135,8 +136,11 @@ def build_hero(pw) -> None:
         page.goto(base + f"/run?run={RUN}")
         page.wait_for_load_state("networkidle")
         found = page.eval_on_selector_all("h2", "els => els.map(e => e.textContent)")
-        if not any("27 finding" in t for t in found):
-            sys.exit(f"STOP hero: the run page did not show the 27 findings of the shipped plan: {found}")
+        plans = sorted((DESK / "校讀" / RUN / "_plans").glob("r*.json"))
+        want = len(json.loads(plans[-1].read_text(encoding="utf-8"))["findings"])
+        if not any(f"{want} finding" in t for t in found):
+            sys.exit(f"STOP hero: the run page did not show the {want} findings of the newest shipped plan "
+                     f"({plans[-1].name}): {found}")
         page.screenshot(path=str(ASSETS / "hero.png"), clip={"x": 0, "y": 0, "width": 1280, "height": 1150})
         print(f"hero.png  1280x1150 @2x from {RUN} (headings: {found})")
         browser.close()

@@ -1,0 +1,4581 @@
+{
+  "schema": "ltm/origin/2",
+  "findings": [
+    {
+      "id": "glossary:0:7",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c0",
+      "char_start": 7,
+      "char_end": 9,
+      "evidence": {
+        "entry": 10.0,
+        "kind": 3.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:50:6",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c50",
+      "char_start": 6,
+      "char_end": 8,
+      "evidence": {
+        "entry": 1.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:55:2",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c55",
+      "char_start": 2,
+      "char_end": 4,
+      "evidence": {
+        "entry": 2.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:56:0",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c56",
+      "char_start": 0,
+      "char_end": 3,
+      "evidence": {
+        "entry": 4.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:123:1",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c123",
+      "char_start": 1,
+      "char_end": 3,
+      "evidence": {
+        "entry": 10.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:149:4",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c149",
+      "char_start": 4,
+      "char_end": 6,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:152:6",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c152",
+      "char_start": 6,
+      "char_end": 8,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:170:10",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c170",
+      "char_start": 10,
+      "char_end": 12,
+      "evidence": {
+        "entry": 10.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:180:10",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c180",
+      "char_start": 10,
+      "char_end": 13,
+      "evidence": {
+        "entry": 13.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:183:0",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c183",
+      "char_start": 0,
+      "char_end": 3,
+      "evidence": {
+        "entry": 11.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:206:2",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c206",
+      "char_start": 2,
+      "char_end": 6,
+      "evidence": {
+        "entry": 12.0,
+        "kind": 3.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:360:0",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c360",
+      "char_start": 0,
+      "char_end": 2,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:385:13",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c385",
+      "char_start": 13,
+      "char_end": 15,
+      "evidence": {
+        "entry": 1.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:449:2",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c449",
+      "char_start": 2,
+      "char_end": 4,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    },
+    {
+      "id": "glossary:474:4",
+      "code": "glossary",
+      "unit": "cue",
+      "cue_id": "c474",
+      "char_start": 4,
+      "char_end": 6,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      }
+    }
+  ],
+  "notes": [],
+  "ops": 0,
+  "script": [],
+  "candidates": [
+    {
+      "op": "replace",
+      "cue_id": "c0",
+      "char_start": 7,
+      "char_end": 9,
+      "text": "重試",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c50",
+      "char_start": 6,
+      "char_end": 8,
+      "text": "假單",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c55",
+      "char_start": 2,
+      "char_end": 4,
+      "text": "假別",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c56",
+      "char_start": 0,
+      "char_end": 3,
+      "text": "人事室",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c123",
+      "char_start": 1,
+      "char_end": 3,
+      "text": "重試",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c149",
+      "char_start": 4,
+      "char_end": 6,
+      "text": "選課",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c152",
+      "char_start": 6,
+      "char_end": 8,
+      "text": "選課",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c170",
+      "char_start": 10,
+      "char_end": 12,
+      "text": "重試",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c180",
+      "char_start": 10,
+      "char_end": 13,
+      "text": "舊系統",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c183",
+      "char_start": 0,
+      "char_end": 3,
+      "text": "亞穩態",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c206",
+      "char_start": 2,
+      "char_end": 6,
+      "text": "瑞士起司",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c360",
+      "char_start": 0,
+      "char_end": 2,
+      "text": "選課",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c385",
+      "char_start": 13,
+      "char_end": 15,
+      "text": "假單",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c449",
+      "char_start": 2,
+      "char_end": 4,
+      "text": "選課",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    },
+    {
+      "op": "replace",
+      "cue_id": "c474",
+      "char_start": 4,
+      "char_end": 6,
+      "text": "選課",
+      "code": "glossary",
+      "origin": "detector:glossary"
+    }
+  ],
+  "unverified": {
+    "no-token-layer": 0,
+    "no-vad": 0
+  },
+  "detectors_skipped": [
+    "speaker-repeat",
+    "filler"
+  ],
+  "detectors_failed": [],
+  "passed_over": {
+    "script-variant": 12
+  },
+  "recording": {
+    "id": "narration-6c80e41d",
+    "path": "recording/narration.wav",
+    "sha256": "6c80e41dca2640801ee12b61027d880d6bdf944016a278dc1a6518d7363a9a31",
+    "duration": 1036.47,
+    "report": {
+      "vad_kept": 1034.598,
+      "vad_enabled": true,
+      "condition_on_previous_text": false,
+      "multilingual": true,
+      "degenerated": false
+    },
+    "windows": [
+      {
+        "id": "w0",
+        "start": 0.43,
+        "end": 29.35,
+        "avg_logprob": -0.1624795697093789,
+        "temperature": 0.0,
+        "compression_ratio": 1.2987012987012987,
+        "no_speech_prob": 0.037841796875
+      },
+      {
+        "id": "w1",
+        "start": 29.35,
+        "end": 58.91,
+        "avg_logprob": -0.18802433565959034,
+        "temperature": 0.0,
+        "compression_ratio": 1.2876254180602007,
+        "no_speech_prob": 0.0138397216796875
+      },
+      {
+        "id": "w2",
+        "start": 58.91,
+        "end": 87.07,
+        "avg_logprob": -0.18155809544341664,
+        "temperature": 0.0,
+        "compression_ratio": 1.2835820895522387,
+        "no_speech_prob": 0.01342010498046875
+      },
+      {
+        "id": "w3",
+        "start": 87.07,
+        "end": 116.09,
+        "avg_logprob": -0.1835671722077999,
+        "temperature": 0.0,
+        "compression_ratio": 1.2028985507246377,
+        "no_speech_prob": 0.1663818359375
+      },
+      {
+        "id": "w4",
+        "start": 116.09,
+        "end": 144.79,
+        "avg_logprob": -0.11618822795707126,
+        "temperature": 0.0,
+        "compression_ratio": 1.2222222222222223,
+        "no_speech_prob": 0.0780029296875
+      },
+      {
+        "id": "w5",
+        "start": 144.79,
+        "end": 172.23,
+        "avg_logprob": -0.1491379244574185,
+        "temperature": 0.0,
+        "compression_ratio": 1.1909722222222223,
+        "no_speech_prob": 0.037872314453125
+      },
+      {
+        "id": "w6",
+        "start": 172.23,
+        "end": 201.87,
+        "avg_logprob": -0.1418821830516574,
+        "temperature": 0.0,
+        "compression_ratio": 1.4193548387096775,
+        "no_speech_prob": 0.07470703125
+      },
+      {
+        "id": "w7",
+        "start": 201.87,
+        "end": 228.83,
+        "avg_logprob": -0.10010416919986408,
+        "temperature": 0.0,
+        "compression_ratio": 1.241509433962264,
+        "no_speech_prob": 0.1517333984375
+      },
+      {
+        "id": "w8",
+        "start": 228.83,
+        "end": 258.11,
+        "avg_logprob": -0.13193359980359673,
+        "temperature": 0.0,
+        "compression_ratio": 1.348148148148148,
+        "no_speech_prob": 0.05413818359375
+      },
+      {
+        "id": "w9",
+        "start": 258.11,
+        "end": 287.61,
+        "avg_logprob": -0.11616379392558131,
+        "temperature": 0.0,
+        "compression_ratio": 1.196551724137931,
+        "no_speech_prob": 0.06646728515625
+      },
+      {
+        "id": "w10",
+        "start": 287.61,
+        "end": 317.13,
+        "avg_logprob": -0.11470808731224723,
+        "temperature": 0.0,
+        "compression_ratio": 1.289655172413793,
+        "no_speech_prob": 0.0694580078125
+      },
+      {
+        "id": "w11",
+        "start": 317.13,
+        "end": 346.25,
+        "avg_logprob": -0.17772032760030074,
+        "temperature": 0.0,
+        "compression_ratio": 1.306338028169014,
+        "no_speech_prob": 0.201416015625
+      },
+      {
+        "id": "w12",
+        "start": 346.25,
+        "end": 376.01,
+        "avg_logprob": -0.13721390257418994,
+        "temperature": 0.0,
+        "compression_ratio": 1.1993464052287581,
+        "no_speech_prob": 0.015411376953125
+      },
+      {
+        "id": "w13",
+        "start": 376.01,
+        "end": 404.73,
+        "avg_logprob": -0.17537313088107465,
+        "temperature": 0.0,
+        "compression_ratio": 1.1890909090909092,
+        "no_speech_prob": 0.0758056640625
+      },
+      {
+        "id": "w14",
+        "start": 404.73,
+        "end": 434.45,
+        "avg_logprob": -0.1184742614188615,
+        "temperature": 0.0,
+        "compression_ratio": 1.2912621359223302,
+        "no_speech_prob": 0.29052734375
+      },
+      {
+        "id": "w15",
+        "start": 434.45,
+        "end": 463.17,
+        "avg_logprob": -0.12666420682647525,
+        "temperature": 0.0,
+        "compression_ratio": 1.2098360655737705,
+        "no_speech_prob": 0.08026123046875
+      },
+      {
+        "id": "w16",
+        "start": 463.17,
+        "end": 492.51,
+        "avg_logprob": -0.14354897869957817,
+        "temperature": 0.0,
+        "compression_ratio": 1.1929824561403508,
+        "no_speech_prob": 0.211669921875
+      },
+      {
+        "id": "w17",
+        "start": 492.51,
+        "end": 522.39,
+        "avg_logprob": -0.11371527645323011,
+        "temperature": 0.0,
+        "compression_ratio": 1.3966101694915254,
+        "no_speech_prob": 0.07366943359375
+      },
+      {
+        "id": "w18",
+        "start": 522.39,
+        "end": 551.05,
+        "avg_logprob": -0.10156249843940542,
+        "temperature": 0.0,
+        "compression_ratio": 1.174074074074074,
+        "no_speech_prob": 0.4443359375
+      },
+      {
+        "id": "w19",
+        "start": 551.05,
+        "end": 578.97,
+        "avg_logprob": -0.10376122477882636,
+        "temperature": 0.0,
+        "compression_ratio": 1.3157894736842106,
+        "no_speech_prob": 0.051055908203125
+      },
+      {
+        "id": "w20",
+        "start": 578.97,
+        "end": 606.71,
+        "avg_logprob": -0.12306113225700212,
+        "temperature": 0.0,
+        "compression_ratio": 1.2095588235294117,
+        "no_speech_prob": 0.060028076171875
+      },
+      {
+        "id": "w21",
+        "start": 606.71,
+        "end": 635.97,
+        "avg_logprob": -0.14149845016669044,
+        "temperature": 0.0,
+        "compression_ratio": 1.1638795986622072,
+        "no_speech_prob": 0.08380126953125
+      },
+      {
+        "id": "w22",
+        "start": 635.97,
+        "end": 663.95,
+        "avg_logprob": -0.10009191356161061,
+        "temperature": 0.0,
+        "compression_ratio": 1.2592592592592593,
+        "no_speech_prob": 0.099365234375
+      },
+      {
+        "id": "w23",
+        "start": 663.95,
+        "end": 691.87,
+        "avg_logprob": -0.21689248272589037,
+        "temperature": 0.0,
+        "compression_ratio": 1.204778156996587,
+        "no_speech_prob": 0.0684814453125
+      },
+      {
+        "id": "w24",
+        "start": 691.87,
+        "end": 720.27,
+        "avg_logprob": -0.11160714630366994,
+        "temperature": 0.0,
+        "compression_ratio": 1.2302405498281788,
+        "no_speech_prob": 0.05657958984375
+      },
+      {
+        "id": "w25",
+        "start": 720.27,
+        "end": 748.87,
+        "avg_logprob": -0.1265923509931868,
+        "temperature": 0.0,
+        "compression_ratio": 1.461818181818182,
+        "no_speech_prob": 0.06744384765625
+      },
+      {
+        "id": "w26",
+        "start": 748.87,
+        "end": 777.63,
+        "avg_logprob": -0.11358532800288972,
+        "temperature": 0.0,
+        "compression_ratio": 1.3598615916955017,
+        "no_speech_prob": 0.04205322265625
+      },
+      {
+        "id": "w27",
+        "start": 777.63,
+        "end": 806.87,
+        "avg_logprob": -0.11514729052592235,
+        "temperature": 0.0,
+        "compression_ratio": 1.3006993006993006,
+        "no_speech_prob": 0.097900390625
+      },
+      {
+        "id": "w28",
+        "start": 806.87,
+        "end": 835.95,
+        "avg_logprob": -0.11792652077368788,
+        "temperature": 0.0,
+        "compression_ratio": 1.28719723183391,
+        "no_speech_prob": 0.054168701171875
+      },
+      {
+        "id": "w29",
+        "start": 835.95,
+        "end": 864.83,
+        "avg_logprob": -0.1374591440936319,
+        "temperature": 0.0,
+        "compression_ratio": 1.3132075471698113,
+        "no_speech_prob": 0.358642578125
+      },
+      {
+        "id": "w30",
+        "start": 864.83,
+        "end": 894.75,
+        "avg_logprob": -0.11471774039729948,
+        "temperature": 0.0,
+        "compression_ratio": 1.316546762589928,
+        "no_speech_prob": 0.06365966796875
+      },
+      {
+        "id": "w31",
+        "start": 894.75,
+        "end": 924.41,
+        "avg_logprob": -0.11986019589791172,
+        "temperature": 0.0,
+        "compression_ratio": 1.3235294117647058,
+        "no_speech_prob": 0.8310546875
+      },
+      {
+        "id": "w32",
+        "start": 924.41,
+        "end": 952.71,
+        "avg_logprob": -0.12787224889239845,
+        "temperature": 0.0,
+        "compression_ratio": 1.1689655172413793,
+        "no_speech_prob": 0.05999755859375
+      },
+      {
+        "id": "w33",
+        "start": 952.71,
+        "end": 981.61,
+        "avg_logprob": -0.13219573064462134,
+        "temperature": 0.0,
+        "compression_ratio": 1.3617021276595744,
+        "no_speech_prob": 0.043975830078125
+      },
+      {
+        "id": "w34",
+        "start": 981.61,
+        "end": 1010.73,
+        "avg_logprob": -0.27205882703556733,
+        "temperature": 0.0,
+        "compression_ratio": 1.369718309859155,
+        "no_speech_prob": 0.030181884765625
+      },
+      {
+        "id": "w35",
+        "start": 1010.73,
+        "end": 1036.43,
+        "avg_logprob": -0.22673872001189038,
+        "temperature": 0.0,
+        "compression_ratio": 1.3471698113207546,
+        "no_speech_prob": 0.002147674560546875
+      }
+    ],
+    "stretches": [
+      {
+        "id": "st000",
+        "start": 0.0,
+        "end": 1036.47,
+        "language": "zh",
+        "agreement": 1.0
+      }
+    ],
+    "cues": [
+      {
+        "id": "c0",
+        "start": 0.43,
+        "end": 4.53,
+        "text": "作為一個學生,總是覺得學校的系統真的是有過一坨",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c1",
+        "start": 4.53,
+        "end": 6.83,
+        "text": "相信這些事情你也一定遇過",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c2",
+        "start": 6.83,
+        "end": 10.93,
+        "text": "像是選課開放的那一分鐘,畫面一直轉圈圈",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c3",
+        "start": 10.93,
+        "end": 13.23,
+        "text": "轉到最後,跳出一個錯誤物頁",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c4",
+        "start": 13.23,
+        "end": 16.31,
+        "text": "誘惑者點開學校的路口網站",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c5",
+        "start": 16.31,
+        "end": 17.83,
+        "text": "明明才剛剛登入",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c6",
+        "start": 17.83,
+        "end": 21.17,
+        "text": "按一下成績查詢,又叫你再登入一次",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c7",
+        "start": 21.17,
+        "end": 24.23,
+        "text": "然後每隔三個月,系統就跳出來說",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c8",
+        "start": 24.23,
+        "end": 27.57,
+        "text": "您的密碼即將到期,請更換",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c9",
+        "start": 27.57,
+        "end": 29.35,
+        "text": "那這時候怎麼辦呢?",
+        "window_id": "w0",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c10",
+        "start": 29.35,
+        "end": 31.15,
+        "text": "就把最後一個字加1",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c11",
+        "start": 31.15,
+        "end": 33.29,
+        "text": "或是加個ABC",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c12",
+        "start": 33.29,
+        "end": 35.79,
+        "text": "然後再按下確認並結束掉",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c13",
+        "start": 35.79,
+        "end": 37.19,
+        "text": "碰到這些事情",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c14",
+        "start": 37.19,
+        "end": 39.97,
+        "text": "我想大部分人心裡都會冒出一句",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c15",
+        "start": 39.97,
+        "end": 42.43,
+        "text": "學校的工程師是不是很爛啊",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c16",
+        "start": 42.43,
+        "end": 43.53,
+        "text": "不然就是沒錢啊",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c17",
+        "start": 43.53,
+        "end": 44.77,
+        "text": "有夠窮的",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c18",
+        "start": 44.77,
+        "end": 47.21,
+        "text": "但我這次去查了一輪",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c19",
+        "start": 47.21,
+        "end": 49.31,
+        "text": "發現這種系統在業界",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c20",
+        "start": 49.31,
+        "end": 52.23,
+        "text": "以及國外到底是怎麼樣出世的",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c21",
+        "start": 52.23,
+        "end": 54.41,
+        "text": "其實結果有點意外",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c22",
+        "start": 54.41,
+        "end": 55.67,
+        "text": "程式寫得很爛",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c23",
+        "start": 55.67,
+        "end": 57.47,
+        "text": "通常只佔了一小部分",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c24",
+        "start": 57.47,
+        "end": 58.91,
+        "text": "剩下的是什麼呢",
+        "window_id": "w1",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c25",
+        "start": 58.91,
+        "end": 61.35,
+        "text": "來,我們來拿個簡單的任務來走一遍",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c26",
+        "start": 61.71,
+        "end": 64.29,
+        "text": "學校想讓學生線上請假",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c27",
+        "start": 65.31,
+        "end": 67.35,
+        "text": "紙本請假其實很簡單",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c28",
+        "start": 67.61,
+        "end": 68.39,
+        "text": "學生填單",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c29",
+        "start": 68.63,
+        "end": 69.67,
+        "text": "老師簽名",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c30",
+        "start": 69.91,
+        "end": 70.69,
+        "text": "系辦蓋章",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c31",
+        "start": 71.19,
+        "end": 71.97,
+        "text": "結束,沒了",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c32",
+        "start": 72.47,
+        "end": 75.29,
+        "text": "要改成線上第一步就是開會",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c33",
+        "start": 75.55,
+        "end": 76.83,
+        "text": "把系統要做什麼",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c34",
+        "start": 77.09,
+        "end": 78.63,
+        "text": "寫成一份需求文件",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c35",
+        "start": 79.13,
+        "end": 81.19,
+        "text": "然後會議上主管說了一句",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c36",
+        "start": 81.43,
+        "end": 83.23,
+        "text": "操作要很直覺",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c37",
+        "start": 83.75,
+        "end": 85.79,
+        "text": "這句話就這樣被寫進了文件裡",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c38",
+        "start": 86.31,
+        "end": 87.07,
+        "text": "那當然問題來了",
+        "window_id": "w2",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c39",
+        "start": 87.07,
+        "end": 88.53,
+        "text": "系统做完之后",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c40",
+        "start": 88.53,
+        "end": 90.09,
+        "text": "你要怎么验收这个直觉",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c41",
+        "start": 90.09,
+        "end": 91.61,
+        "text": "没办法嘛",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c42",
+        "start": 91.61,
+        "end": 94.45,
+        "text": "需求工程师其实有一个国际标准",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c43",
+        "start": 94.45,
+        "end": 96.95,
+        "text": "叫做ISO29148",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c44",
+        "start": 96.95,
+        "end": 99.43,
+        "text": "它对一个好需求的要求里面",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c45",
+        "start": 99.43,
+        "end": 100.47,
+        "text": "有一项就是",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c46",
+        "start": 100.47,
+        "end": 102.31,
+        "text": "要可以被验证",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c47",
+        "start": 102.31,
+        "end": 104.51,
+        "text": "直觉做不到这件事",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c48",
+        "start": 104.51,
+        "end": 106.21,
+        "text": "但如果改成",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c49",
+        "start": 106.21,
+        "end": 108.17,
+        "text": "新生不看说明",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c50",
+        "start": 108.17,
+        "end": 110.37,
+        "text": "三分钟内送出价单",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c51",
+        "start": 110.37,
+        "end": 110.99,
+        "text": "诶",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c52",
+        "start": 110.99,
+        "end": 112.17,
+        "text": "这就做得到了",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c53",
+        "start": 112.17,
+        "end": 114.35,
+        "text": "接着每个单位都来加一条",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c54",
+        "start": 114.35,
+        "end": 116.09,
+        "text": "学务处说",
+        "window_id": "w3",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c55",
+        "start": 116.09,
+        "end": 118.27,
+        "text": "某些价别要先给胜负主看",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c56",
+        "start": 118.27,
+        "end": 119.55,
+        "text": "人士是说",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c57",
+        "start": 119.55,
+        "end": 122.33,
+        "text": "那干脆教职员的请假也一起做吧",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c58",
+        "start": 122.33,
+        "end": 125.07,
+        "text": "每一条看起来单独都很合理",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c59",
+        "start": 125.07,
+        "end": 126.43,
+        "text": "但加起来",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c60",
+        "start": 126.43,
+        "end": 129.85,
+        "text": "请假系统却慢慢长成了一个全校的行政平台",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c61",
+        "start": 129.85,
+        "end": 132.49,
+        "text": "时程跟预算却没有跟着变",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c62",
+        "start": 132.49,
+        "end": 134.89,
+        "text": "那这个呢就叫做scope creep",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c63",
+        "start": 134.89,
+        "end": 136.15,
+        "text": "范围蔓延",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c64",
+        "start": 136.15,
+        "end": 137.93,
+        "text": "那最后谁说了算",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c65",
+        "start": 137.93,
+        "end": 141.19,
+        "text": "通常就是会议室里职位最高的那位",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c66",
+        "start": 141.19,
+        "end": 143.75,
+        "text": "业界还有一个半开玩笑的缩写",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c67",
+        "start": 143.75,
+        "end": 144.79,
+        "text": "叫做HIPPO",
+        "window_id": "w4",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c68",
+        "start": 144.79,
+        "end": 146.31,
+        "text": "就是河马的HIPPO",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c69",
+        "start": 146.31,
+        "end": 147.69,
+        "text": "那其实呢",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c70",
+        "start": 147.69,
+        "end": 149.83,
+        "text": "它是指最高薪的人的意见",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c71",
+        "start": 149.83,
+        "end": 150.77,
+        "text": "好",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c72",
+        "start": 150.77,
+        "end": 151.99,
+        "text": "那需求写完了",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c73",
+        "start": 151.99,
+        "end": 154.87,
+        "text": "下一步就是把各单位的东西接起来",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c74",
+        "start": 154.87,
+        "end": 157.29,
+        "text": "那这不又会遇到什么事情呢",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c75",
+        "start": 157.29,
+        "end": 160.87,
+        "text": "学校通常会希望学生登录一次",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c76",
+        "start": 160.87,
+        "end": 162.71,
+        "text": "所有系统都能够用",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c77",
+        "start": 162.71,
+        "end": 164.79,
+        "text": "那这个叫做SSO",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c78",
+        "start": 164.79,
+        "end": 166.23,
+        "text": "Single Sign-On",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c79",
+        "start": 166.23,
+        "end": 167.37,
+        "text": "单一登录",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c80",
+        "start": 167.37,
+        "end": 169.01,
+        "text": "它有没有在运作",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c81",
+        "start": 169.01,
+        "end": 171.01,
+        "text": "你其实在网址列就看得到",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c82",
+        "start": 171.01,
+        "end": 172.23,
+        "text": "登录的时候",
+        "window_id": "w5",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c83",
+        "start": 172.23,
+        "end": 175.81,
+        "text": "网址会先跳到另一个专门验证身份的网站",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c84",
+        "start": 175.81,
+        "end": 177.83,
+        "text": "验证完再跳回来",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c85",
+        "start": 177.83,
+        "end": 179.67,
+        "text": "那这就是有接上的系统",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c86",
+        "start": 179.67,
+        "end": 180.97,
+        "text": "没接上的呢",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c87",
+        "start": 180.97,
+        "end": 182.53,
+        "text": "就是你点进去的时候",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c88",
+        "start": 182.53,
+        "end": 184.91,
+        "text": "又跳出他自己的账号密码框",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c89",
+        "start": 184.91,
+        "end": 188.79,
+        "text": "但是为什么有些旧式接不上呢",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c90",
+        "start": 188.79,
+        "end": 190.17,
+        "text": "因为啊",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c91",
+        "start": 190.17,
+        "end": 192.95,
+        "text": "成绩系统可能是交出自己采购的",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c92",
+        "start": 192.95,
+        "end": 195.19,
+        "text": "图书馆又是另一个厂商",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c93",
+        "start": 195.19,
+        "end": 197.33,
+        "text": "宿舍呢用的又是旧账号",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c94",
+        "start": 197.33,
+        "end": 199.91,
+        "text": "体育室呢甚至可能是利用表单耶",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c95",
+        "start": 199.91,
+        "end": 201.87,
+        "text": "每一个系统背后",
+        "window_id": "w6",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c96",
+        "start": 201.87,
+        "end": 203.27,
+        "text": "其实都是一个单位",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c97",
+        "start": 203.27,
+        "end": 204.17,
+        "text": "一份合约",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c98",
+        "start": 204.17,
+        "end": 205.39,
+        "text": "一套自己的账号",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c99",
+        "start": 205.39,
+        "end": 207.69,
+        "text": "那在1968年",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c100",
+        "start": 207.69,
+        "end": 209.27,
+        "text": "有一位工程师叫做",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c101",
+        "start": 209.27,
+        "end": 210.37,
+        "text": "Melvin Conway",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c102",
+        "start": 210.37,
+        "end": 211.75,
+        "text": "他写过一段话",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c103",
+        "start": 211.75,
+        "end": 213.95,
+        "text": "后来大家叫他Conway定律",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c104",
+        "start": 213.95,
+        "end": 217.13,
+        "text": "那就是设计系统的组织",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c105",
+        "start": 217.13,
+        "end": 218.57,
+        "text": "做出来的系统",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c106",
+        "start": 218.57,
+        "end": 221.19,
+        "text": "会复制这个组织的沟通结构",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c107",
+        "start": 221.19,
+        "end": 223.43,
+        "text": "所以简单来说",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c108",
+        "start": 223.43,
+        "end": 225.91,
+        "text": "学校有几个各管各的单位",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c109",
+        "start": 225.91,
+        "end": 228.83,
+        "text": "系统就会有几个各管各的入口",
+        "window_id": "w7",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c110",
+        "start": 228.83,
+        "end": 231.85,
+        "text": "所以最后做出来的整合入口",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c111",
+        "start": 231.85,
+        "end": 233.45,
+        "text": "其实通常呢",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c112",
+        "start": 233.45,
+        "end": 235.31,
+        "text": "它就只是一个一页的连接",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c113",
+        "start": 235.31,
+        "end": 238.03,
+        "text": "每一点都需要重新登录一次",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c114",
+        "start": 238.03,
+        "end": 241.29,
+        "text": "那它其实比较像是一排书签啊",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c115",
+        "start": 241.29,
+        "end": 244.39,
+        "text": "那连系统的名字也会照着组织长吗?",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c116",
+        "start": 245.55,
+        "end": 246.35,
+        "text": "答案是会",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c117",
+        "start": 246.35,
+        "end": 247.57,
+        "text": "而且很常见",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c118",
+        "start": 247.57,
+        "end": 251.13,
+        "text": "系统的名字很多时候是写给审计划",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c119",
+        "start": 251.13,
+        "end": 252.61,
+        "text": "评奖的人看的",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c120",
+        "start": 252.61,
+        "end": 254.55,
+        "text": "而不是写给用的人看的",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c121",
+        "start": 254.79,
+        "end": 258.11,
+        "text": "像是搜寻框旁边标着智慧搜寻",
+        "window_id": "w8",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c122",
+        "start": 258.11,
+        "end": 261.49,
+        "text": "背后可能其实就只是一个自串比对",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c123",
+        "start": 261.49,
+        "end": 263.51,
+        "text": "这种事多到一个程度",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c124",
+        "start": 263.51,
+        "end": 265.23,
+        "text": "就有了一个专有名词",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c125",
+        "start": 265.23,
+        "end": 267.09,
+        "text": "叫做AI Washing",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c126",
+        "start": 267.09,
+        "end": 268.27,
+        "text": "AI 漂白",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c127",
+        "start": 268.27,
+        "end": 270.79,
+        "text": "在2024年3月",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c128",
+        "start": 270.79,
+        "end": 274.21,
+        "text": "美国证管会就处分了两家投资顾问公司",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c129",
+        "start": 274.21,
+        "end": 277.17,
+        "text": "理由就是他们说自己有用AI",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c130",
+        "start": 277.17,
+        "end": 278.31,
+        "text": "但其实没有",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c131",
+        "start": 278.31,
+        "end": 279.99,
+        "text": "所以走到这里",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c132",
+        "start": 279.99,
+        "end": 281.91,
+        "text": "第一个机制就出现了",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c133",
+        "start": 281.91,
+        "end": 283.89,
+        "text": "系统长得像组织",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c134",
+        "start": 283.89,
+        "end": 287.61,
+        "text": "需求长得像会议室里的权力分布",
+        "window_id": "w9",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c135",
+        "start": 287.61,
+        "end": 290.83,
+        "text": "系统的边界长得像单位的边界",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c136",
+        "start": 290.83,
+        "end": 293.65,
+        "text": "而名字长得像预算的语言",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c137",
+        "start": 293.65,
+        "end": 295.45,
+        "text": "所以我会把它看成",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c138",
+        "start": 295.45,
+        "end": 298.83,
+        "text": "工程师是照着组织的形状在盖房子",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c139",
+        "start": 298.83,
+        "end": 300.49,
+        "text": "而不是工程师太烂",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c140",
+        "start": 300.49,
+        "end": 303.03,
+        "text": "这个牵扯其实蛮多的",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c141",
+        "start": 303.03,
+        "end": 304.11,
+        "text": "那房子盖好了",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c142",
+        "start": 304.11,
+        "end": 305.37,
+        "text": "正式开放的那一刻",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c143",
+        "start": 305.37,
+        "end": 306.73,
+        "text": "又会发生什么事呢",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c144",
+        "start": 306.73,
+        "end": 308.83,
+        "text": "我们来假设一下",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c145",
+        "start": 308.83,
+        "end": 311.87,
+        "text": "上线前资讯中心有做压力测试",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c146",
+        "start": 311.87,
+        "end": 315.23,
+        "text": "用程式模拟5000个人同时登入",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c147",
+        "start": 315.23,
+        "end": 315.99,
+        "text": "系统",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c148",
+        "start": 315.99,
+        "end": 317.13,
+        "text": "诶 没问题",
+        "window_id": "w10",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c149",
+        "start": 317.13,
+        "end": 319.69,
+        "text": "結果開放選客的那天早上",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c150",
+        "start": 319.69,
+        "end": 321.49,
+        "text": "撐不到一分鐘他就掛了",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c151",
+        "start": 321.49,
+        "end": 323.59,
+        "text": "這個情境是我舉的例子",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c152",
+        "start": 323.59,
+        "end": 328.19,
+        "text": "但他的形狀在選客季的新聞裡面一再出現",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c153",
+        "start": 328.19,
+        "end": 329.71,
+        "text": "而且我自己也遇到過",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c154",
+        "start": 329.71,
+        "end": 333.07,
+        "text": "那這到底差在哪裡",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c155",
+        "start": 333.07,
+        "end": 336.15,
+        "text": "差在測試程式非常的守規矩",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c156",
+        "start": 336.15,
+        "end": 338.31,
+        "text": "送一次就乖乖的等結果",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c157",
+        "start": 338.31,
+        "end": 339.61,
+        "text": "但真人呢",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c158",
+        "start": 339.61,
+        "end": 340.87,
+        "text": "真人不可能嘛",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c159",
+        "start": 340.87,
+        "end": 343.61,
+        "text": "畫面卡住大家就一直開始按F5",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c160",
+        "start": 343.61,
+        "end": 344.63,
+        "text": "就是一直重整",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c161",
+        "start": 344.63,
+        "end": 346.25,
+        "text": "他一直按一直按",
+        "window_id": "w11",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c162",
+        "start": 346.25,
+        "end": 349.21,
+        "text": "每按一次伺服器就多收到一个request",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c163",
+        "start": 349.21,
+        "end": 350.63,
+        "text": "系统就更慢",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c164",
+        "start": 350.63,
+        "end": 352.65,
+        "text": "然后更多人的按重置",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c165",
+        "start": 352.65,
+        "end": 355.67,
+        "text": "那这个呢就是一个正回馈的回路",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c166",
+        "start": 355.67,
+        "end": 358.99,
+        "text": "也就是结果回头放大了原因",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c167",
+        "start": 358.99,
+        "end": 363.39,
+        "text": "Amazon Web Service的工程师Mark Brooker",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c168",
+        "start": 363.39,
+        "end": 365.03,
+        "text": "有算过一个例子",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c169",
+        "start": 365.03,
+        "end": 367.27,
+        "text": "一个quest要经过五层服务",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c170",
+        "start": 367.27,
+        "end": 370.71,
+        "text": "如果每一层遇到失败都重视两到三次",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c171",
+        "start": 370.71,
+        "end": 373.57,
+        "text": "那底下的资料库收到的request",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c172",
+        "start": 373.57,
+        "end": 376.01,
+        "text": "会是原本的243倍",
+        "window_id": "w12",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c173",
+        "start": 376.01,
+        "end": 377.91,
+        "text": "也就是3的五次方",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c174",
+        "start": 377.91,
+        "end": 380.19,
+        "text": "但更麻烦的其实是",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c175",
+        "start": 380.19,
+        "end": 382.29,
+        "text": "这个回路一旦转起来",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c176",
+        "start": 382.29,
+        "end": 384.95,
+        "text": "就算一开始那波人潮已经退了",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c177",
+        "start": 384.95,
+        "end": 386.93,
+        "text": "系统还是快不起来",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c178",
+        "start": 386.93,
+        "end": 390.77,
+        "text": "因为太慢从事更慢的这个回路",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c179",
+        "start": 390.77,
+        "end": 392.25,
+        "text": "自己撑住了自己",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c180",
+        "start": 392.25,
+        "end": 396.91,
+        "text": "2021年就有一篇研究系统研究的论文",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c181",
+        "start": 396.91,
+        "end": 398.15,
+        "text": "替他取了名字",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c182",
+        "start": 398.15,
+        "end": 400.97,
+        "text": "叫做Meta Stable Failure",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c183",
+        "start": 400.97,
+        "end": 402.39,
+        "text": "亚文太失效",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c184",
+        "start": 402.39,
+        "end": 404.73,
+        "text": "所以要问的就不只是",
+        "window_id": "w13",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c185",
+        "start": 404.73,
+        "end": 406.09,
+        "text": "伺服器够不够大",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c186",
+        "start": 406.09,
+        "end": 407.93,
+        "text": "而是那一波人潮",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c187",
+        "start": 407.93,
+        "end": 409.89,
+        "text": "到底是从哪里来的",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c188",
+        "start": 409.89,
+        "end": 411.63,
+        "text": "很多时候",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c189",
+        "start": 411.63,
+        "end": 414.17,
+        "text": "尖峰其实是规则制造出来的",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c190",
+        "start": 414.17,
+        "end": 415.35,
+        "text": "先场先赢",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c191",
+        "start": 415.35,
+        "end": 417.65,
+        "text": "再加上全校同一个时间开放",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c192",
+        "start": 417.65,
+        "end": 419.75,
+        "text": "等于是把整个学期的流量",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c193",
+        "start": 419.75,
+        "end": 420.95,
+        "text": "挤进了同一分钟",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c194",
+        "start": 420.95,
+        "end": 423.57,
+        "text": "但如果教务处今年改成",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c195",
+        "start": 423.57,
+        "end": 425.07,
+        "text": "全年级同一天选课",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c196",
+        "start": 425.07,
+        "end": 427.17,
+        "text": "而没有人通知资讯中心",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c197",
+        "start": 427.17,
+        "end": 429.03,
+        "text": "那么系统就会是在",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c198",
+        "start": 429.03,
+        "end": 430.59,
+        "text": "完全不知道的情况下",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c199",
+        "start": 430.59,
+        "end": 433.05,
+        "text": "迎接比去年多好几倍的人",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c200",
+        "start": 433.05,
+        "end": 434.45,
+        "text": "那出事之后",
+        "window_id": "w14",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c201",
+        "start": 434.45,
+        "end": 436.29,
+        "text": "检讨会就会得到一个结论",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c202",
+        "start": 436.29,
+        "end": 438.85,
+        "text": "叫做资讯中心没有掌握需求",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c203",
+        "start": 438.85,
+        "end": 440.05,
+        "text": "但是",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c204",
+        "start": 440.05,
+        "end": 442.77,
+        "text": "英国心理学家James Reason",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c205",
+        "start": 442.77,
+        "end": 445.29,
+        "text": "提过一个很常被引用的图像",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c206",
+        "start": 445.29,
+        "end": 447.09,
+        "text": "叫做瑞士启示模型",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c207",
+        "start": 447.09,
+        "end": 448.97,
+        "text": "每一层防护都有洞",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c208",
+        "start": 448.97,
+        "end": 450.07,
+        "text": "事故呢",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c209",
+        "start": 450.07,
+        "end": 452.55,
+        "text": "则是好几层的洞刚好对在一起",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c210",
+        "start": 452.55,
+        "end": 454.45,
+        "text": "你只追究最后一层",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c211",
+        "start": 454.45,
+        "end": 456.37,
+        "text": "前面那些洞其实都还在",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c212",
+        "start": 456.37,
+        "end": 457.77,
+        "text": "但没有被检讨",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c213",
+        "start": 457.77,
+        "end": 460.59,
+        "text": "所以Google的微运团队",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c214",
+        "start": 460.59,
+        "end": 463.17,
+        "text": "就把事后检讨不救责个人",
+        "window_id": "w15",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c215",
+        "start": 463.17,
+        "end": 464.61,
+        "text": "写成了团队的信条",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c216",
+        "start": 464.61,
+        "end": 466.13,
+        "text": "而且动呢",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c217",
+        "start": 466.13,
+        "end": 467.55,
+        "text": "其实不一定除在软体",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c218",
+        "start": 467.55,
+        "end": 470.01,
+        "text": "2022年7月",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c219",
+        "start": 470.01,
+        "end": 470.79,
+        "text": "英国热量",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c220",
+        "start": 470.79,
+        "end": 472.67,
+        "text": "伦敦超过40度",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c221",
+        "start": 472.67,
+        "end": 473.97,
+        "text": "Google云端",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c222",
+        "start": 473.97,
+        "end": 475.45,
+        "text": "在伦敦的一个机房",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c223",
+        "start": 475.45,
+        "end": 477.25,
+        "text": "好几套备源冷却",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c224",
+        "start": 477.25,
+        "end": 478.27,
+        "text": "同时失效",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c225",
+        "start": 478.27,
+        "end": 480.21,
+        "text": "只好关掉一部分的机器",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c226",
+        "start": 480.21,
+        "end": 481.49,
+        "text": "不断电系统",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c227",
+        "start": 481.49,
+        "end": 482.19,
+        "text": "顾得了电",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c228",
+        "start": 482.19,
+        "end": 483.91,
+        "text": "但顾不了冷气",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c229",
+        "start": 483.91,
+        "end": 484.75,
+        "text": "好",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c230",
+        "start": 484.75,
+        "end": 486.31,
+        "text": "规则能制作人潮",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c231",
+        "start": 486.31,
+        "end": 487.17,
+        "text": "那规矩",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c232",
+        "start": 487.17,
+        "end": 489.51,
+        "text": "能不能也制造出别的东西",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c233",
+        "start": 489.51,
+        "end": 490.83,
+        "text": "可以",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c234",
+        "start": 490.83,
+        "end": 492.51,
+        "text": "而且最好的例子",
+        "window_id": "w16",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c235",
+        "start": 492.51,
+        "end": 495.17,
+        "text": "就是开场那个三个月换一次的密码",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c236",
+        "start": 495.17,
+        "end": 497.01,
+        "text": "这个规则的本意是",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c237",
+        "start": 497.01,
+        "end": 498.41,
+        "text": "就算密码被偷了",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c238",
+        "start": 498.41,
+        "end": 499.91,
+        "text": "过一阵子也会失效",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c239",
+        "start": 499.91,
+        "end": 503.81,
+        "text": "但人不会每三个月都想一组全新的密码吗",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c240",
+        "start": 503.81,
+        "end": 505.25,
+        "text": "怎么可能那么多组",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c241",
+        "start": 505.25,
+        "end": 507.67,
+        "text": "大家会把旧的改一个字",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c242",
+        "start": 507.67,
+        "end": 508.75,
+        "text": "加个金碳号",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c243",
+        "start": 508.75,
+        "end": 509.63,
+        "text": "数字加1",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c244",
+        "start": 509.63,
+        "end": 510.71,
+        "text": "英文加A",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c245",
+        "start": 510.71,
+        "end": 511.35,
+        "text": "或PC",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c246",
+        "start": 511.35,
+        "end": 514.53,
+        "text": "那攻击者只要拿到了你的旧密码",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c247",
+        "start": 514.53,
+        "end": 516.43,
+        "text": "要拆新的就相当的容易",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c248",
+        "start": 516.43,
+        "end": 517.73,
+        "text": "也就是呢",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c249",
+        "start": 517.73,
+        "end": 519.47,
+        "text": "规则改变了人的行为",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c250",
+        "start": 519.47,
+        "end": 522.39,
+        "text": "人的行为又反过来让规则失效",
+        "window_id": "w17",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c251",
+        "start": 522.39,
+        "end": 525.39,
+        "text": "美国国家标准语技术研究院",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c252",
+        "start": 525.39,
+        "end": 526.33,
+        "text": "简称NIST",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c253",
+        "start": 526.33,
+        "end": 530.05,
+        "text": "有一份很多机构照着用的身份验证指引",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c254",
+        "start": 530.05,
+        "end": 533.31,
+        "text": "编号是SP863B",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c255",
+        "start": 533.31,
+        "end": 537.01,
+        "text": "它2025年订稿的第四版直接写明",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c256",
+        "start": 537.01,
+        "end": 540.61,
+        "text": "不得要求使用者定期更换密码",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c257",
+        "start": 540.61,
+        "end": 543.37,
+        "text": "只有发现密码可能外泄的时候",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c258",
+        "start": 543.37,
+        "end": 544.55,
+        "text": "才强制更换",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c259",
+        "start": 544.55,
+        "end": 546.57,
+        "text": "也不得硬性规定",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c260",
+        "start": 546.57,
+        "end": 548.81,
+        "text": "一定要混大小写跟符号",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c261",
+        "start": 548.81,
+        "end": 551.05,
+        "text": "反而是要求改成",
+        "window_id": "w18",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c262",
+        "start": 551.05,
+        "end": 553.03,
+        "text": "密码必须足够长",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c263",
+        "start": 553.03,
+        "end": 555.61,
+        "text": "而且建议搭配多因素验证",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c264",
+        "start": 555.61,
+        "end": 559.05,
+        "text": "也就是常见的2FA之类的",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c265",
+        "start": 559.05,
+        "end": 561.81,
+        "text": "那输入栏位其实也是同一件事",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c266",
+        "start": 561.81,
+        "end": 563.41,
+        "text": "你设计一个年龄栏",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c267",
+        "start": 563.41,
+        "end": 564.81,
+        "text": "就会有人填复数",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c268",
+        "start": 564.81,
+        "end": 566.47,
+        "text": "你只收英文字母",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c269",
+        "start": 566.47,
+        "end": 567.71,
+        "text": "就会有人的名字里面",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c270",
+        "start": 567.71,
+        "end": 568.93,
+        "text": "有你没想过的字",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c271",
+        "start": 568.93,
+        "end": 570.87,
+        "text": "人对系统的反应",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c272",
+        "start": 570.87,
+        "end": 572.85,
+        "text": "永远比设计的人想象的多",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c273",
+        "start": 572.85,
+        "end": 573.79,
+        "text": "所以呢",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c274",
+        "start": 573.79,
+        "end": 575.87,
+        "text": "第二个机制就是正回馈",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c275",
+        "start": 575.87,
+        "end": 577.65,
+        "text": "系统怎么对待人",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c276",
+        "start": 577.65,
+        "end": 578.97,
+        "text": "人就怎么回应系统",
+        "window_id": "w19",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c277",
+        "start": 578.97,
+        "end": 582.19,
+        "text": "而那个回应又会回头把问题放大",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c278",
+        "start": 582.19,
+        "end": 584.51,
+        "text": "听到这里你可能会想",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c279",
+        "start": 584.51,
+        "end": 585.61,
+        "text": "既然这么乱",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c280",
+        "start": 585.61,
+        "end": 587.93,
+        "text": "那干脆整个砍掉虫血不就好了",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c281",
+        "start": 587.93,
+        "end": 590.47,
+        "text": "其实没有这么简单",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c282",
+        "start": 590.47,
+        "end": 593.29,
+        "text": "很多大型机构都有一套",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c283",
+        "start": 593.29,
+        "end": 594.81,
+        "text": "没有人敢碰的旧系统",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c284",
+        "start": 594.81,
+        "end": 597.91,
+        "text": "美国政府问责署GNO",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c285",
+        "start": 597.91,
+        "end": 599.95,
+        "text": "在2019年有一份报告",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c286",
+        "start": 599.95,
+        "end": 602.69,
+        "text": "列出联邦政府最需要太欢的",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c287",
+        "start": 602.69,
+        "end": 603.77,
+        "text": "10套老系统",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c288",
+        "start": 603.77,
+        "end": 606.71,
+        "text": "最老的已经用了51年",
+        "window_id": "w20",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c289",
+        "start": 606.71,
+        "end": 610.55,
+        "text": "有些还在跑一个叫C-O-B-O-L的老语言",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c290",
+        "start": 610.55,
+        "end": 612.93,
+        "text": "那会维护的人越来越少",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c291",
+        "start": 612.93,
+        "end": 615.79,
+        "text": "2020年疫情失业潮",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c292",
+        "start": 615.79,
+        "end": 618.23,
+        "text": "美国纽泽西州两周内",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c293",
+        "start": 618.23,
+        "end": 620.81,
+        "text": "涌进了30多万失业及复申请",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c294",
+        "start": 620.81,
+        "end": 624.55,
+        "text": "州长还公开征求会写C-O-B-O-L的志工",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c295",
+        "start": 624.55,
+        "end": 628.51,
+        "text": "因为处理申请的系统已经用了40多年了",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c296",
+        "start": 628.51,
+        "end": 630.19,
+        "text": "这种征才越来越少",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c297",
+        "start": 630.19,
+        "end": 631.99,
+        "text": "那为什么不早点换呢?",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c298",
+        "start": 632.55,
+        "end": 635.97,
+        "text": "Google的工程师Heron Wright有一句话",
+        "window_id": "w21",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c299",
+        "start": 635.97,
+        "end": 638.43,
+        "text": "后来被叫做Huron定语",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c300",
+        "start": 638.43,
+        "end": 640.31,
+        "text": "只要用的人够多",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c301",
+        "start": 640.31,
+        "end": 642.75,
+        "text": "你承诺了什么已经不再重要",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c302",
+        "start": 642.75,
+        "end": 645.09,
+        "text": "系统每一个看得到的行为",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c303",
+        "start": 645.09,
+        "end": 646.99,
+        "text": "它都会被某个人依赖",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c304",
+        "start": 646.99,
+        "end": 648.37,
+        "text": "换句话说",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c305",
+        "start": 648.37,
+        "end": 650.09,
+        "text": "那只看起来乱七八糟",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c306",
+        "start": 650.09,
+        "end": 651.19,
+        "text": "没有文件的城市",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c307",
+        "start": 651.19,
+        "end": 653.59,
+        "text": "可能正撑着某个办公室",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c308",
+        "start": 653.59,
+        "end": 654.91,
+        "text": "每天早上的报表",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c309",
+        "start": 654.91,
+        "end": 656.71,
+        "text": "某台旧的印表机",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c310",
+        "start": 656.71,
+        "end": 659.83,
+        "text": "或者某个只认得旧格式的下游系统",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c311",
+        "start": 659.83,
+        "end": 661.77,
+        "text": "你以为你在清垃圾",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c312",
+        "start": 661.77,
+        "end": 663.95,
+        "text": "其实在拆别人的地板啊",
+        "window_id": "w22",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c313",
+        "start": 663.95,
+        "end": 668.17,
+        "text": "英国作家Chester Tone将近一百年前讲过一个比喻",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c314",
+        "start": 668.17,
+        "end": 669.75,
+        "text": "路上有一道围犁",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c315",
+        "start": 669.75,
+        "end": 671.65,
+        "text": "你不知道它为什么在那里",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c316",
+        "start": 671.65,
+        "end": 672.93,
+        "text": "那就先不要猜",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c317",
+        "start": 672.93,
+        "end": 675.39,
+        "text": "先去弄清楚它到底在挡什么",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c318",
+        "start": 675.39,
+        "end": 678.09,
+        "text": "那这种看不见的依赖在出事的时候",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c319",
+        "start": 678.09,
+        "end": 679.41,
+        "text": "长什么样子呢?",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c320",
+        "start": 680.17,
+        "end": 682.25,
+        "text": "它长得就像一通客服电话",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c321",
+        "start": 682.25,
+        "end": 684.81,
+        "text": "我登录不了",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c322",
+        "start": 684.81,
+        "end": 686.45,
+        "text": "画面写什么",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c323",
+        "start": 686.45,
+        "end": 687.71,
+        "text": "就写失败",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c324",
+        "start": 687.71,
+        "end": 689.59,
+        "text": "还有别的字吗?",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c325",
+        "start": 690.01,
+        "end": 690.93,
+        "text": "有一串英文耶",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c326",
+        "start": 690.93,
+        "end": 691.87,
+        "text": "太长了",
+        "window_id": "w23",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c327",
+        "start": 691.87,
+        "end": 695.95,
+        "text": "工程师看到的其实是错误代码跟系统记录",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c328",
+        "start": 695.95,
+        "end": 697.99,
+        "text": "而使用者看到的就只有",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c329",
+        "start": 697.99,
+        "end": 699.87,
+        "text": "蓝色那个系统坏了",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c330",
+        "start": 699.87,
+        "end": 702.19,
+        "text": "中间其实没有共同的语言",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c331",
+        "start": 702.19,
+        "end": 703.01,
+        "text": "所以",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c332",
+        "start": 703.01,
+        "end": 706.71,
+        "text": "做使用性研究的Nelson Norman Group",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c333",
+        "start": 706.71,
+        "end": 708.91,
+        "text": "有一套十条的界面原则",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c334",
+        "start": 708.91,
+        "end": 710.65,
+        "text": "第九条就是在讲",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c335",
+        "start": 710.65,
+        "end": 714.31,
+        "text": "错误讯息要用白话讲出发生什么事",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c336",
+        "start": 714.31,
+        "end": 715.41,
+        "text": "要怎么修",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c337",
+        "start": 715.41,
+        "end": 717.41,
+        "text": "让使用者自己也难看懂",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c338",
+        "start": 717.41,
+        "end": 718.19,
+        "text": "能够恢复",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c339",
+        "start": 718.19,
+        "end": 720.27,
+        "text": "所以第三个机制",
+        "window_id": "w24",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c340",
+        "start": 720.27,
+        "end": 722.11,
+        "text": "它就叫做看不见的依赖",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c341",
+        "start": 722.11,
+        "end": 723.39,
+        "text": "系统背后",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c342",
+        "start": 723.39,
+        "end": 725.49,
+        "text": "有你看不到的人正在用它",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c343",
+        "start": 725.49,
+        "end": 726.67,
+        "text": "画面前面",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c344",
+        "start": 726.67,
+        "end": 729.25,
+        "text": "也有工程师看不到的人正在用它",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c345",
+        "start": 729.25,
+        "end": 731.73,
+        "text": "好那回到一开始的问题",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c346",
+        "start": 731.73,
+        "end": 733.47,
+        "text": "那学校系统这么烂",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c347",
+        "start": 733.47,
+        "end": 735.09,
+        "text": "真的是工程师太烂吗",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c348",
+        "start": 735.09,
+        "end": 737.97,
+        "text": "刚刚这么多故事听下来",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c349",
+        "start": 737.97,
+        "end": 739.45,
+        "text": "其实蛮多结论的",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c350",
+        "start": 739.45,
+        "end": 740.69,
+        "text": "那最重要的就是",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c351",
+        "start": 740.69,
+        "end": 742.43,
+        "text": "学校系统常说是",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c352",
+        "start": 742.43,
+        "end": 744.57,
+        "text": "其实多半不真的是程式很烂",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c353",
+        "start": 744.57,
+        "end": 746.97,
+        "text": "它是照着学校的样子长出来",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c354",
+        "start": 746.97,
+        "end": 748.87,
+        "text": "被所有人的反应放大",
+        "window_id": "w25",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c355",
+        "start": 748.87,
+        "end": 750.79,
+        "text": "又被看不见的人依赖着",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c356",
+        "start": 750.79,
+        "end": 751.93,
+        "text": "所以很难改掉",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c357",
+        "start": 751.93,
+        "end": 754.83,
+        "text": "刚好对到开场的那三个画面",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c358",
+        "start": 754.83,
+        "end": 757.13,
+        "text": "入口网站要你再登录一次",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c359",
+        "start": 757.13,
+        "end": 759.27,
+        "text": "是因为系统长得像组织",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c360",
+        "start": 759.27,
+        "end": 761.79,
+        "text": "选客开放那一分钟转圈圈",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c361",
+        "start": 761.79,
+        "end": 763.51,
+        "text": "是因为正回馈的塞爆",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c362",
+        "start": 763.51,
+        "end": 765.79,
+        "text": "系统很老却没人敢换",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c363",
+        "start": 765.79,
+        "end": 768.01,
+        "text": "这背后是看不见的依赖",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c364",
+        "start": 768.01,
+        "end": 771.73,
+        "text": "这三个机制都不是一个人改得掉的",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c365",
+        "start": 771.73,
+        "end": 772.83,
+        "text": "但这每一个",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c366",
+        "start": 772.83,
+        "end": 776.23,
+        "text": "其实都有一个人在某个位置上做出了决定",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c367",
+        "start": 776.23,
+        "end": 777.63,
+        "text": "所以接下来",
+        "window_id": "w26",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c368",
+        "start": 777.63,
+        "end": 779.71,
+        "text": "我照我们大家可能占的位置",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c369",
+        "start": 779.71,
+        "end": 781.25,
+        "text": "一个一个来讲它",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c370",
+        "start": 781.25,
+        "end": 782.77,
+        "text": "第一种",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c371",
+        "start": 782.77,
+        "end": 785.17,
+        "text": "如果你会参与开会写需求",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c372",
+        "start": 785.17,
+        "end": 786.59,
+        "text": "像是行政人员",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c373",
+        "start": 786.59,
+        "end": 789.01,
+        "text": "助教或者刚进来的工程师",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c374",
+        "start": 789.01,
+        "end": 791.91,
+        "text": "你要看的地方是需求文件里",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c375",
+        "start": 791.91,
+        "end": 794.77,
+        "text": "功能说明或验收标准哪一栏",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c376",
+        "start": 794.77,
+        "end": 796.77,
+        "text": "判断的方法很简单",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c377",
+        "start": 796.77,
+        "end": 798.53,
+        "text": "这句话里面有没有",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c378",
+        "start": 798.53,
+        "end": 801.61,
+        "text": "直觉、好用、快速、智慧",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c379",
+        "start": 801.61,
+        "end": 802.65,
+        "text": "这种形容词",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c380",
+        "start": 802.65,
+        "end": 803.77,
+        "text": "有的话",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c381",
+        "start": 803.77,
+        "end": 806.87,
+        "text": "它就是一条写不出验收方式的需求",
+        "window_id": "w27",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c382",
+        "start": 806.87,
+        "end": 809.77,
+        "text": "那第一步,就是把它改写成",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c383",
+        "start": 809.77,
+        "end": 813.59,
+        "text": "谁,在什么情况,在多久之内,做到什么",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c384",
+        "start": 813.59,
+        "end": 815.27,
+        "text": "像刚刚那句",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c385",
+        "start": 815.27,
+        "end": 819.11,
+        "text": "心生不看说明,三分钟内送出价单",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c386",
+        "start": 819.11,
+        "end": 820.45,
+        "text": "就是一个很好的范例",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c387",
+        "start": 820.45,
+        "end": 822.19,
+        "text": "怎么确认改好了?",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c388",
+        "start": 822.73,
+        "end": 825.73,
+        "text": "找一个没参加会议的人,只给他看这句话",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c389",
+        "start": 825.73,
+        "end": 828.75,
+        "text": "问他,做到了没有,你判断得出来吗?",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c390",
+        "start": 829.37,
+        "end": 832.75,
+        "text": "如果能判断,那这条需求才算真正的被写完",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c391",
+        "start": 833.75,
+        "end": 835.95,
+        "text": "第二种,如果你会改规则",
+        "window_id": "w28",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c392",
+        "start": 835.95,
+        "end": 837.49,
+        "text": "像选课时程",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c393",
+        "start": 837.49,
+        "end": 839.47,
+        "text": "截止时间全校通知",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c394",
+        "start": 839.47,
+        "end": 841.17,
+        "text": "那么你要看的地方",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c395",
+        "start": 841.17,
+        "end": 843.39,
+        "text": "是要发出去的公告草稿",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c396",
+        "start": 843.39,
+        "end": 845.51,
+        "text": "或是会议记录里面",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c397",
+        "start": 845.51,
+        "end": 846.97,
+        "text": "决议事项的那一行",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c398",
+        "start": 846.97,
+        "end": 848.85,
+        "text": "判断的标准是",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c399",
+        "start": 848.85,
+        "end": 851.41,
+        "text": "这个改动会不会让很多人",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c400",
+        "start": 851.41,
+        "end": 853.89,
+        "text": "在同一个时间做同一件事",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c401",
+        "start": 853.89,
+        "end": 856.45,
+        "text": "像全年级同步开放",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c402",
+        "start": 856.45,
+        "end": 858.57,
+        "text": "所有人同一天截止",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c403",
+        "start": 858.57,
+        "end": 860.11,
+        "text": "这种就算是了",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c404",
+        "start": 860.11,
+        "end": 861.71,
+        "text": "第一步呢",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c405",
+        "start": 861.71,
+        "end": 862.65,
+        "text": "发公告之前",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c406",
+        "start": 862.65,
+        "end": 864.83,
+        "text": "把资讯中心加进收件人",
+        "window_id": "w29",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c407",
+        "start": 864.83,
+        "end": 868.05,
+        "text": "附上一句预估同时上线人数",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c408",
+        "start": 868.05,
+        "end": 870.23,
+        "text": "会从多少变成多少",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c409",
+        "start": 870.23,
+        "end": 873.43,
+        "text": "然后能改成十段内登记",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c410",
+        "start": 873.43,
+        "end": 876.81,
+        "text": "事后抽签或照资源区分配的",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c411",
+        "start": 876.81,
+        "end": 878.15,
+        "text": "就优先这样改",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c412",
+        "start": 878.15,
+        "end": 882.57,
+        "text": "因为尖峰不是靠买更大的机器撑过去的",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c413",
+        "start": 882.57,
+        "end": 884.59,
+        "text": "而是靠规则把它拆散",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c414",
+        "start": 884.59,
+        "end": 886.29,
+        "text": "那怎么验收呢",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c415",
+        "start": 886.29,
+        "end": 888.49,
+        "text": "开放当天同时上线人数",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c416",
+        "start": 888.49,
+        "end": 890.61,
+        "text": "有没有落在通知的数字附近",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c417",
+        "start": 890.61,
+        "end": 892.75,
+        "text": "然后事后检讨的时候",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c418",
+        "start": 892.75,
+        "end": 894.75,
+        "text": "有没有人说出我们不知道",
+        "window_id": "w30",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c419",
+        "start": 894.75,
+        "end": 896.19,
+        "text": "第三种",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c420",
+        "start": 896.19,
+        "end": 897.95,
+        "text": "如果你要动一套旧系统",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c421",
+        "start": 897.95,
+        "end": 901.01,
+        "text": "你要看的地方是那套系统的程式码",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c422",
+        "start": 901.01,
+        "end": 902.03,
+        "text": "排程设定",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c423",
+        "start": 902.03,
+        "end": 905.83,
+        "text": "或任何每天固定会跑的批次工作清单",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c424",
+        "start": 905.83,
+        "end": 907.19,
+        "text": "判断是",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c425",
+        "start": 907.19,
+        "end": 911.03,
+        "text": "你能不能说出这段程式是谁在用",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c426",
+        "start": 911.03,
+        "end": 912.77,
+        "text": "用来做什么",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c427",
+        "start": 912.77,
+        "end": 914.47,
+        "text": "那说不出来",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c428",
+        "start": 914.47,
+        "end": 916.65,
+        "text": "就是一道还没查清楚的违离",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c429",
+        "start": 916.65,
+        "end": 918.61,
+        "text": "第一步先不要改",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c430",
+        "start": 918.61,
+        "end": 921.09,
+        "text": "先把它实际在做的事情记下来",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c431",
+        "start": 921.09,
+        "end": 922.43,
+        "text": "每天几点跑",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c432",
+        "start": 922.43,
+        "end": 923.31,
+        "text": "产出什么",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c433",
+        "start": 923.31,
+        "end": 924.41,
+        "text": "谁会收到",
+        "window_id": "w31",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c434",
+        "start": 924.41,
+        "end": 928.41,
+        "text": "业界把这个叫做Characterization Test",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c435",
+        "start": 928.41,
+        "end": 929.73,
+        "text": "特性测试",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c436",
+        "start": 929.73,
+        "end": 932.19,
+        "text": "就是先把现状固定住",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c437",
+        "start": 932.19,
+        "end": 934.65,
+        "text": "之后改了才知道有没有改坏",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c438",
+        "start": 934.65,
+        "end": 937.87,
+        "text": "真的要换就从外围一块一块的换",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c439",
+        "start": 937.87,
+        "end": 939.89,
+        "text": "不要一次全部重写",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c440",
+        "start": 939.89,
+        "end": 942.07,
+        "text": "而且验收的方式是",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c441",
+        "start": 942.07,
+        "end": 944.37,
+        "text": "新旧系统并行一段时间",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c442",
+        "start": 944.37,
+        "end": 948.09,
+        "text": "产出主笔比对它都一模一样",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c443",
+        "start": 948.09,
+        "end": 950.49,
+        "text": "而且没有任何一个单位跑来说",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c444",
+        "start": 950.49,
+        "end": 952.71,
+        "text": "我们的报表不见了啦",
+        "window_id": "w32",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c445",
+        "start": 952.71,
+        "end": 954.29,
+        "text": "最后一种",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c446",
+        "start": 954.29,
+        "end": 956.75,
+        "text": "就是如果你只是个使用者",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c447",
+        "start": 956.75,
+        "end": 958.67,
+        "text": "像是学生或老师",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c448",
+        "start": 958.67,
+        "end": 960.35,
+        "text": "你会碰到的地方呢",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c449",
+        "start": 960.35,
+        "end": 962.61,
+        "text": "就是选客页面以及错误画面",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c450",
+        "start": 962.61,
+        "end": 964.15,
+        "text": "那你要判断什么",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c451",
+        "start": 964.15,
+        "end": 965.99,
+        "text": "脑子要想一下",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c452",
+        "start": 965.99,
+        "end": 967.45,
+        "text": "如果画面卡住的时候",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c453",
+        "start": 967.45,
+        "end": 970.01,
+        "text": "你下一个动作到底是在帮忙呢",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c454",
+        "start": 970.01,
+        "end": 971.45,
+        "text": "还是在加重负担",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c455",
+        "start": 971.45,
+        "end": 972.57,
+        "text": "第一步",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c456",
+        "start": 972.57,
+        "end": 973.59,
+        "text": "卡住的时候",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c457",
+        "start": 973.59,
+        "end": 975.57,
+        "text": "不要一直按重新整理",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c458",
+        "start": 975.57,
+        "end": 977.77,
+        "text": "等个十几秒再试一次",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c459",
+        "start": 977.77,
+        "end": 979.71,
+        "text": "如果系统有排队页",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c460",
+        "start": 979.71,
+        "end": 981.61,
+        "text": "那就好好地留在画面上",
+        "window_id": "w33",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c461",
+        "start": 981.61,
+        "end": 985.77,
+        "text": "出錯的時候,截圖或者抄下畫面上的錯誤代碼",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c462",
+        "start": 985.77,
+        "end": 986.97,
+        "text": "如果他有給",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c463",
+        "start": 986.97,
+        "end": 990.15,
+        "text": "連同系統名稱跟時間一起做回報",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c464",
+        "start": 990.15,
+        "end": 993.39,
+        "text": "而不是只說,藍色的那個不能用",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c465",
+        "start": 993.39,
+        "end": 995.95,
+        "text": "那怎麼知道你做對了",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c466",
+        "start": 995.95,
+        "end": 997.99,
+        "text": "就是克服回你的第一句話",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c467",
+        "start": 997.99,
+        "end": 999.97,
+        "text": "他是截法,而不是問你",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c468",
+        "start": 999.97,
+        "end": 1002.47,
+        "text": "請問你在說哪一個系統呢?",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c469",
+        "start": 1002.47,
+        "end": 1005.93,
+        "text": "所以開場那個問題,現在可以換一個問法",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c470",
+        "start": 1005.93,
+        "end": 1008.37,
+        "text": "不是工程師是不是很爛",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c471",
+        "start": 1008.37,
+        "end": 1010.73,
+        "text": "而是這個系統長得像誰",
+        "window_id": "w34",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c472",
+        "start": 1010.73,
+        "end": 1012.73,
+        "text": "誰的反應在放大他",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c473",
+        "start": 1012.73,
+        "end": 1015.03,
+        "text": "誰在背後依賴了他",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c474",
+        "start": 1015.03,
+        "end": 1018.03,
+        "text": "那下一次選客如果又在轉圈圈的時候",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c475",
+        "start": 1018.03,
+        "end": 1019.13,
+        "text": "你可以罵",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c476",
+        "start": 1019.13,
+        "end": 1020.93,
+        "text": "但是你大概就知道了",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c477",
+        "start": 1020.93,
+        "end": 1023.83,
+        "text": "那個圈圈裡面轉的不只是程式",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c478",
+        "start": 1023.83,
+        "end": 1026.53,
+        "text": "當然這三個機制也有它的邊界",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c479",
+        "start": 1026.53,
+        "end": 1029.93,
+        "text": "如果一套系統就是一個人寫一個人用",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c480",
+        "start": 1029.93,
+        "end": 1031.23,
+        "text": "那程式寫的爛",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c481",
+        "start": 1031.23,
+        "end": 1033.43,
+        "text": "那真的就只是程式寫的爛",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      },
+      {
+        "id": "c482",
+        "start": 1033.43,
+        "end": 1036.43,
+        "text": "好,我是八折,我們下次再見囉,掰掰",
+        "window_id": "w35",
+        "stretch_id": "st000"
+      }
+    ]
+  }
+}

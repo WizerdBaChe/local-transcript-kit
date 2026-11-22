@@ -1,0 +1,290 @@
+{
+  "schema": "ltm/origin/2",
+  "findings": [
+    {
+      "id": "glossary:0:7",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c0",
+      "char_start": 7,
+      "char_end": 9,
+      "evidence": {
+        "entry": 10.0,
+        "kind": 3.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:50:6",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c50",
+      "char_start": 6,
+      "char_end": 8,
+      "evidence": {
+        "entry": 1.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:55:2",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c55",
+      "char_start": 2,
+      "char_end": 4,
+      "evidence": {
+        "entry": 2.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:56:0",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c56",
+      "char_start": 0,
+      "char_end": 3,
+      "evidence": {
+        "entry": 4.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:123:1",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c123",
+      "char_start": 1,
+      "char_end": 3,
+      "evidence": {
+        "entry": 10.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:149:4",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c149",
+      "char_start": 4,
+      "char_end": 6,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:152:6",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c152",
+      "char_start": 6,
+      "char_end": 8,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:170:10",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c170",
+      "char_start": 10,
+      "char_end": 12,
+      "evidence": {
+        "entry": 10.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:180:10",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c180",
+      "char_start": 10,
+      "char_end": 13,
+      "evidence": {
+        "entry": 13.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:183:0",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c183",
+      "char_start": 0,
+      "char_end": 3,
+      "evidence": {
+        "entry": 11.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:206:2",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c206",
+      "char_start": 2,
+      "char_end": 6,
+      "evidence": {
+        "entry": 12.0,
+        "kind": 3.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:360:0",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c360",
+      "char_start": 0,
+      "char_end": 2,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:385:13",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c385",
+      "char_start": 13,
+      "char_end": 15,
+      "evidence": {
+        "entry": 1.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:449:2",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c449",
+      "char_start": 2,
+      "char_end": 4,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    },
+    {
+      "id": "glossary:474:4",
+      "code": "glossary",
+      "unit": "cue",
+      "severity": "info",
+      "cue_id": "c474",
+      "char_start": 4,
+      "char_end": 6,
+      "evidence": {
+        "entry": 8.0,
+        "kind": 2.0,
+        "script": 1.0,
+        "source": 0.0
+      },
+      "actions": [
+        "check",
+        "keep"
+      ]
+    }
+  ]
+}
