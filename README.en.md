@@ -33,7 +33,7 @@ A machine transcript never raises its hand where it is wrong. `ltm` transcribes 
 ## At a glance
 
 ```text
-$ python -m ltm --root docs/assets/demo/desk plan narration-6c80e41d
+$ python -m ltm --root docs/assets/demo/desk plan narration-6c80e41d     (excerpt)
 run narration-6c80e41d revision r002
   15 finding(s), 0 note(s), 0 proposed edit(s)
   [glossary] c50 chars 6-8  entry=1, kind=2, script=1, source=0

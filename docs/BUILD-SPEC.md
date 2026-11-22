@@ -98,7 +98,7 @@ from `docs/assets/capture_demo_desk.py` on the author's machine (paths to the re
 
 Kept as at the origin, on purpose: `reference-impl/pyproject.toml` version `0.1.0.dev0` (the pack's version is the
 tag); the origin's own data-drive paths in prose, test defaults and fixtures (`D:/output/...`), and the tool project
-names it cites (e.g. `voice-clone-lab` in `tools/build_syllables.py`).
+names it cites (e.g. `voice-clone-lab` in `tools/build_syllables.py` and `tools/build_simplified_variants.py`).
 
 Not shipped: `docs/` of the origin except `docs/gui-contract.json` and `docs/gui-mapping-2026-09-10.md` (tests
 read them), `tools/` except `tools/build_syllables.py` and `tools/build_simplified_variants.py`, the origin's asset-library manifest. List:

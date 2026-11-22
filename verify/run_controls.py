@@ -168,8 +168,8 @@ cues = {k: int(v) for k, v in s_hant.get("script_cues", {}).items()}
 record("K6 script rules on the demo",
        (n_on, passed, n_off, runs_hant, runs_hans) == (15, 12, 27, 2, 3)
        and cues == {"hant": 68, "hans": 363, "none": 52},
-       f"glossary findings {n_on:g} with the rule (passed over {passed:g}), {n_off:g} with it off; "
-       f"script-switch runs {runs_hant:g} expecting hant, {runs_hans:g} expecting hans; "
+       f"glossary findings {n_on or 0:g} with the rule (passed over {passed or 0:g}), {n_off or 0:g} with it off; "
+       f"script-switch runs {runs_hant or 0:g} expecting hant, {runs_hans or 0:g} expecting hans; "
        f"cues by script hant/hans/none = {cues.get('hant')}/{cues.get('hans')}/{cues.get('none')}")
 
 n = sum(ok for _, ok in results)
