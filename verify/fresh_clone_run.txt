@@ -1,14 +1,29 @@
-# Fresh-clone acceptance run, 2026-11-22
-# Clone of commit 7ecb9da (first run at b04f6de gave the same lines) into a new scratch folder; HOME, USERPROFILE and CLAUDE_CONFIG_DIR pointed at an
-# empty folder inside it; LTM_ROOT empty. reference-impl/runtime/ absent (no speech engine, no weights).
-# Optional dependencies: the controls use none (playwright is only for docs/assets/build_assets.py;
-# media-fetch-read-kit is replaced by verify/fixtures/), so no separate blocked-dependency run applies.
-# Command: python -X utf8 verify/run_controls.py <scratch>   (exit 0)
+# Fresh-clone acceptance run, 2026-11-23 (v1.1.0)
+# Clone of commit 92da296 into a new scratch folder; HOME, USERPROFILE and CLAUDE_CONFIG_DIR pointed at an
+# empty folder beside it; LTM_ROOT unset. reference-impl/runtime/ absent (no speech engine, no weights).
+# Run A: plain. Run B: the optional dependencies blocked in the launching interpreter (a sitecustomize that makes
+# `import playwright`, `opencc` and `pypinyin` raise ImportError, checked beforehand) and the media-fetch-read-kit
+# executable removed from PATH. The controls start their child processes with their own environment, so the block
+# covers the launcher, not the children; the product itself imports none of them (tests/test_layering.py, K2).
+# playwright is only for docs/assets/build_assets.py; media-fetch-read-kit is replaced by verify/fixtures/.
+# Command: python -X utf8 verify/run_controls.py <scratch>   (exit 0 both times)
 
+## Run A (plain)
 ENV  python 3.12.7, pytest 9.1.1
-PASS K1 shipped suite: passed 516, failed 0, skipped 5; not collected: 11 module(s)
-PASS K2 layering control: failures shipped=0 (passed 86), planted urllib import=2
+PASS K1 shipped suite: passed 518, failed 0, skipped 5; not collected: 12 module(s)
+PASS K2 layering control: failures shipped=0 (passed 88), planted urllib import=2
 PASS K3 mfp->ltm recipe: no captions: exit 0, came_from rows 1; uploader captions: exit 10, rows 0
 PASS K4 no free text in --json: URL in prose face=True, URL in --json=False, came_from_count=1.0
 PASS K5 output root: LTM_ROOT set -> desk; unset -> home/TranscriptDesk
-SUMMARY: 5/5 controls pass
+PASS K6 script rules on the demo: glossary findings 15 with the rule (passed over 12), 27 with it off; script-switch runs 2 expecting hant, 3 expecting hans; cues by script hant/hans/none = 68/363/52
+SUMMARY: 6/6 controls pass
+
+## Run B (optional dependencies blocked)
+ENV  python 3.12.7, pytest 9.1.1
+PASS K1 shipped suite: passed 518, failed 0, skipped 5; not collected: 12 module(s)
+PASS K2 layering control: failures shipped=0 (passed 88), planted urllib import=2
+PASS K3 mfp->ltm recipe: no captions: exit 0, came_from rows 1; uploader captions: exit 10, rows 0
+PASS K4 no free text in --json: URL in prose face=True, URL in --json=False, came_from_count=1.0
+PASS K5 output root: LTM_ROOT set -> desk; unset -> home/TranscriptDesk
+PASS K6 script rules on the demo: glossary findings 15 with the rule (passed over 12), 27 with it off; script-switch runs 2 expecting hant, 3 expecting hans; cues by script hant/hans/none = 68/363/52
+SUMMARY: 6/6 controls pass
