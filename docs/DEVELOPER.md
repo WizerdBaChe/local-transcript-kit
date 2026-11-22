@@ -41,8 +41,8 @@ flowchart TB
   V --> SCH[agentapi/schema 回應型別檢查]
 ```
 
-兩個「面」（給人看的 CLI、給 agent 的 `--json`）呼叫同一個函式；面不得直接 import store 或 engine
-（`tests/test_two_faces.py`）。產品本體只用標準函式庫、不得 import 網路模組（`tests/test_layering.py`）。
+兩個「面」（給人看的 CLI、給 agent 的 `--json`）呼叫同一個函式（`tests/test_agentapi_schema.py`）；
+`ui/agent` 這個命名空間不得 import store、engine 或偵測器（`tests/test_two_faces.py`），其他 `ui` 模組可以。產品本體只用標準函式庫、不得 import 網路模組（`tests/test_layering.py`）。
 faster-whisper 跑在 `runtime/asr-py` 這個獨立直譯器裡，產品透過子行程和它交換 JSON 行。
 
 ## README 流程圖對照

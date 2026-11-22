@@ -7,7 +7,7 @@ author's runtime) and the Hugging Face model page.
 
 | Material | Where | Licence | Notes |
 |---|---|---|---|
-| pypinyin pronunciation data (derived) | `reference-impl/src/ltm/detect/data/syllables.tsv` | MIT (Copyright (c) 2016 mozillazg, 闲耘) | The full notice ships beside it: `reference-impl/src/ltm/detect/data/NOTICE-pypinyin.txt`. Built by `reference-impl/tools/build_syllables.py` from pypinyin's `pinyin_dict.json`. |
+| pypinyin 0.55.0 pronunciation data (derived) | `reference-impl/src/ltm/detect/data/syllables.tsv` | MIT (Copyright (c) 2016 mozillazg, 闲耘), as shipped in the 0.55.0 package the table was built from on 2026-10-30 | The full notice ships beside it: `reference-impl/src/ltm/detect/data/NOTICE-pypinyin.txt`. Built by `reference-impl/tools/build_syllables.py` from that package's `pinyin_dict.json`. pypinyin draws its readings from the pinyin-data project; whether every upstream source of that file carries the same terms was not checked. |
 
 Nothing else here is third-party: the product (`reference-impl/src/ltm`) uses the Python standard library only.
 

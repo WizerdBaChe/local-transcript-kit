@@ -10,7 +10,8 @@
 #   2. the weights of Hugging Face Systran/faster-whisper-large-v3 (MIT) into
 #      reference-impl\runtime\models\faster-whisper-large-v3 (DEFAULT_MODEL_DIR), about 3.1 GB,
 #      each file checked against the SHA-256 recorded below (taken from the copy the author decodes with).
-# It changes no PATH, no environment variable and no file outside reference-impl\runtime.
+# It changes no PATH and no environment variable; what it installs lands in reference-impl\runtime
+# (pip and huggingface_hub may still use their own caches under your profile).
 # ltm itself needs none of this to install, run its tests, or open the review page; only decode does.
 param([switch]$Yes, [switch]$SkipModel)
 $ErrorActionPreference = "Stop"

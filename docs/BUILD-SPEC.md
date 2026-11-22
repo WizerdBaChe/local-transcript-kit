@@ -48,9 +48,11 @@ from mfp FetchResult / probe output `schemaVersion` 1:
 
 - probe: `results[0].manifest.items[].kind`, `.index`, `.sidecars[].kind` (`captions` | `auto-captions`),
   `results[0].manifest.captionsUnconfirmed`;
-- fetch: `items[].index`, `.status`, `.path`; `posts[0].url`, `.postId`. A fetch item carries no `kind`: join by `index`.
+- fetch: `items[].index`, `.status`, `.path`; `posts[0].url`, `.postId`. A fetch item carries no `kind`: join by
+  `index` to the probe's video items, else accept a `status: ok` item whose path ends in a video extension
+  (`VIDEO_EXT` in the recipe).
 
-Decision: `captions` → stop (exit 10, the uploader's text exists); `auto-captions` → stop and ask (exit 11);
+Decision, in this order: `captionsUnconfirmed` true → go on; `captions` → stop (exit 10, the uploader's text exists); `auto-captions` → stop and ask (exit 11);
 otherwise intake with `--from-url posts[0].url --from-note "mfp <postId>"` (exit 0). Malformed input → exit 2.
 review-when: mfp changes `schemaVersion` of its probe or fetch output.
 
@@ -89,6 +91,10 @@ from `docs/assets/capture_demo_desk.py` on the author's machine (paths to the re
 | E2 | `CLAUDE.md` | the author's machine-specific `LTM_ROOT` value → "a data drive" |
 | E3 | `conftest.py` | appended kit block: modules whose records are not shipped are left out of collection (`collect_ignore`), one test is skipped, and the run names them; inert when the records exist |
 | R1 | design prose (all files) | the author's workspace path prefix → `<WORKSPACE>/`; `~/.claude/` → `<CLAUDE_HOME>/` |
+
+Kept as at the origin, on purpose: `reference-impl/pyproject.toml` version `0.1.0.dev0` (the pack's version is the
+tag); the origin's own data-drive paths in prose, test defaults and fixtures (`D:/output/...`), and the tool project
+names it cites (e.g. `voice-clone-lab` in `tools/build_syllables.py`).
 
 Not shipped: `docs/` of the origin except `docs/gui-contract.json` and `docs/gui-mapping-2026-09-10.md` (tests
 read them), `tools/` except `tools/build_syllables.py`, the origin's asset-library manifest. List:

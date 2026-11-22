@@ -77,12 +77,15 @@ make it pass.
 `ltm` reads local files only. If your user starts from a public post and has media-fetch-read-kit (`mfp`)
 installed, you are the integrator; neither tool reads the other's folders:
 
-1. `mfp probe <url> --write-subs --json` and read `results[0].manifest.items[].sidecars[].kind`.
-2. `captions` → the uploader's own text exists: fetch it with `mfp fetch <url> --write-subs`; ltm is not needed.
+1. `mfp probe <url> --write-subs --json` and read `results[0].manifest.captionsUnconfirmed` and
+   `results[0].manifest.items[].sidecars[].kind`.
+2. Checked in this order: `captionsUnconfirmed: true` → mfp could not tell, go on.
+   `captions` → the uploader's own text exists: fetch it with `mfp fetch <url> --write-subs`; ltm is not needed.
    `auto-captions` → the platform's machine transcript: tell the user and ask which to use.
-   none, or `captionsUnconfirmed: true` → go on.
-3. `mfp fetch <url> --json` → the saved path is `items[].path` (status `ok`; join to the probe by `index`, a fetch
-   item has no `kind`), the post URL is `posts[].url`.
+   none → go on.
+3. `mfp fetch <url> --json` → the saved path is `items[].path` (status `ok`; join to the probe's video items by
+   `index`, or else take an item whose path ends in a video extension; a fetch item has no `kind`), the post URL is
+   `posts[].url`.
 4. `python -m ltm intake <path> --from-url <posts[].url> --from-note "mfp <postId>"`, then `decode`, `plan`.
 5. Report the findings and say that ltm does not guarantee correct words.
 

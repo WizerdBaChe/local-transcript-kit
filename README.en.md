@@ -26,7 +26,7 @@ A machine transcript never raises its hand where it is wrong. `ltm` transcribes 
 ## What it solves
 
 - **A transcript does not tell you where it is wrong.** Fluent text hides a hallucinated sentence, a decoder loop pasted five times, a term heard as a sound-alike. `ltm` does not promise to correct it; it tells you **where to doubt and why**.
-- **Two signals before it says "problem".** One signal is a note; two or more independent signals on the same span make a finding. Glossary sound-alikes are their own line: "please look", never an automatic replacement.
+- **Two signals before it says "problem".** One signal is a note; two or more independent signals on the same span make a finding (one exception: the same cue repeated 5 or more times in a row is a finding on its own). Glossary sound-alikes are their own line: "please look", never an automatic replacement.
 - **Nothing is overwritten.** Every decode and every accepted edit opens a new revision (r000, r001, ...); old ones stay, each recording whether a person or an agent made it.
 - **People and agents use the same functions.** `--json` is the agent face of every verb (a test pins that both faces call one function); responses carry no free-text field.
 

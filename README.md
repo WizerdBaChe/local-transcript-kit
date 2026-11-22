@@ -26,7 +26,7 @@
 ## 它解決什麼
 
 - **逐字稿不會告訴你哪裡錯**：一段通順的中文，看不出哪一句是模型幻聽、哪幾行是解碼器卡住後重複貼上、哪個術語被聽成音近字。`ltm` 不保證幫你改對，它告訴你**該懷疑哪裡、為什麼**。
-- **至少兩個訊號才說「有問題」**：單一訊號只記成 note 讓你參考；兩個以上獨立訊號指向同一段，才變成 finding。術語表的音近字是另一條線，標成「請你看一下」，不自動替換。
+- **至少兩個訊號才說「有問題」**：單一訊號只記成 note 讓你參考；兩個以上獨立訊號指向同一段，才變成 finding（唯一例外：同一句連續重複 5 次以上，本身就算 finding）。術語表的音近字是另一條線，標成「請你看一下」，不自動替換。
 - **改了也不會蓋掉**：每次解碼、每次採納修改都開新的一版（r000、r001…），舊版永遠留著；每一版記下是人還是 agent 做的。
 - **人和 agent 用同一套**：指令列加 `--json` 就是 agent 的介面，兩邊呼叫同一個函式（有測試盯著）；回應裡沒有自由文字欄位，agent 讀到的不會摻進可被當成指令的句子。
 
@@ -108,7 +108,7 @@ python -m ltm.ui.serve --root docs/assets/demo/desk --read-only
 powershell -ExecutionPolicy Bypass -File setup-runtime.ps1   # 先說要下載多少（約 3.1 GB 模型＋套件），問過你才下載
 $env:PYTHONPATH = "reference-impl/src"
 python -m ltm intake "你的錄音.m4a"        # 印出 run 代號
-python -m ltm decode <run 代號>             # 唯一會花時間的一步；17 分鐘錄音在作者的 GPU 上約 17 分鐘
+python -m ltm decode <run 代號>             # 唯一會花時間的一步；17 分鐘錄音在作者的 GPU 上不到 2 分鐘（含載入模型）
 python -m ltm detect <run 代號> --lexicon 你的詞表.json   # 選用
 python -m ltm.ui.serve                      # 校讀頁
 ```
