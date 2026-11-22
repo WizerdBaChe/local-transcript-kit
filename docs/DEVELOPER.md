@@ -15,7 +15,7 @@ local-transcript-kit/
 │   │   ├── core/       資料模型、編號、編輯腳本、進度
 │   │   ├── store/      輸出根目錄 (layout)、寫入、來源記錄 (came_from)
 │   │   ├── engine/     與獨立直譯器裡的 faster-whisper 溝通 (sidecar, channel, contract)
-│   │   ├── detect/     偵測器：重複、解碼器異常、詞表音近字；門檻與評分
+│   │   ├── detect/     偵測器：重複、解碼器異常、詞表音近字、字形切換 (script-switch)；門檻與評分
 │   │   ├── agentapi/   動詞 (verbs) 與回應型別 (schema；回應不得含自由文字)
 │   │   ├── ui/         命令列 (cli)、agent 面 (agent)、本機校讀頁 (serve)
 │   │   └── AGENTS.md   呼叫契約（`ltm agent guide` 印出的就是它）
@@ -58,7 +58,7 @@ README 的流程圖由 `docs/assets/build_assets.py` 的 `FLOW` 表畫出；每�
 | `rec` | 1 本機錄音／影片 | README「轉寫你自己的錄音」 |
 | `intake` | 2 intake：登記（可記來源網址） | `reference-impl/src/ltm/agentapi/verbs.py` intake；`store/came_from.py`（`--from-url / --from-note`） |
 | `decode` | 3 decode：本機辨識 | `engine/runner.py`、`engine/sidecar.py`；`setup-runtime.ps1` 建的 runtime |
-| `detect` | 4 detect：重複、解碼器異常、詞表音近字 | `detect/detectors.py`、`detect/signals.py`、`detect/soundalike.py`、`detect/lexicon.py` |
+| `detect` | 4 detect：重複、解碼器異常、詞表音近字 | `detect/detectors.py`、`detect/signals.py`、`detect/soundalike.py`、`detect/lexicon.py`；`detect --script` 的字形段落在 `reference-impl/src/ltm/detect/scriptform.py`，兩者共用 `reference-impl/src/ltm/detect/data/simplified_variants.tsv` |
 | `plan` | 5 校讀頁：哪幾句可疑、為什麼 | `ui/serve.py`；`ltm plan` 的 `_plans/rNNN.json` |
 | `decide` | 6 你決定：採納＝開新一版 | `accept` 動詞；BUILD-SPEC §4（舊版永不改寫） |
 
@@ -78,14 +78,15 @@ python -m pip install -r verify/requirements.txt
 python -X utf8 verify/run_controls.py <一個新的空資料夾>
 ```
 
-對照 [`verify/controls_run.txt`](../verify/controls_run.txt)：5 行都是 `PASS`，最後一行 `SUMMARY: 5/5 controls pass`。
-K2–K5 是兩面對照：同時印出正常值與故意弄壞時的值，兩者必須不同。驗收不會啟動語音引擎、不連網。
+對照 [`verify/controls_run.txt`](../verify/controls_run.txt)：6 行都是 `PASS`，最後一行 `SUMMARY: 6/6 controls pass`。
+K2–K6 是兩面對照：同時印出正常值與故意弄壞時的值，兩者必須不同。驗收不會啟動語音引擎、不連網。
 
 ## 刻意的設計
 
 - **兩個工具互不讀對方**：mfp 與 ltm 的串接由 agent 做（帶路徑和網址），不是誰呼叫誰；只裝其中一個也完整可用。
 - **網址不進 `--json`**：agent 回應只有識別碼與封閉集合的狀態，網址只存在磁碟上與人看的輸出（INV-12）。
 - **修訂不改寫**：`accept` 開新一版，舊版保留，誤判可以退回。
+- **字形比對是單向的**：詞表詞若被寫成「簡體專用字」（OpenCC 的對照裡，字本身不是繁體字的那些：验→驗），視為同一個詞，略過並計入 `passed_over["script-variant"]`；后、系、价 這類本身也是繁體字的不在表裡，仍會照標，因為那可能真的是別的詞。`script-switch`（`detect --script hant|hans`，不在預設偵測器裡）只標出離開預期字形的連續段落，文字從不被轉換。
 - **LLM 不在產品裡**：要不要請 LLM 挑校正候選，由呼叫的 agent 每次問使用者。
 
 ## 限制
@@ -93,8 +94,8 @@ K2–K5 是兩面對照：同時印出正常值與故意弄壞時的值，兩者
 README「限制」一節是摘要，這裡列全部：
 
 - 偵測器只涵蓋三類錯誤（重複、解碼器自報異常、詞表音近字）；其他錯字看不到。示範旁白沒有詞表時 0 則，但實際有錯字（例如「錯誤物頁」「路口網站」沒被標出）。
-- 詞表比對分繁簡：引擎中途改用簡體時，寫對的簡體詞會被當成音近字（示範 27 則中有 验收、学务处、旧系统、选课、入口网站 這類誤報）。這是 ltm 的缺陷，尚未修。
-- 11 個測試模組需要原作者的量測錄音與完整規格，公開版不收集（K1 會列名）；偵測器門檻的校正在這裡沒有重驗。
+- 詞表比對的繁簡規則是單向的（v1.1.0）：寫成簡體專用字的詞表詞會略過並計數，示範 run 因此從 27 則（r001）變 15 則（r002）；但詞表詞裡含 后、系、价 這類也是繁體字的字時，簡體寫法仍會被當成音近字標出，這是刻意的取捨。留下的 15 則裡仍可能有誤報（例如「研究系统」對「舊系統」）。`script-switch` 只標段落，不轉換、不判斷對錯。
+- 12 個測試模組需要原作者的量測錄音與完整規格，公開版不收集（K1 會列名）；偵測器門檻的校正在這裡沒有重驗。
 - GPU float16 解碼不是位元可重現；兩次 decode 結果不同是預期的。
 - 只在 Windows 11 + Python 3.12 實測。`setup-runtime.ps1` 依賴 PyPI 與 Hugging Face 上的檔案持續存在；檔案變了會在 SHA-256 檢查失敗。
 - 測試防粗心，不防刻意繞路；校讀頁只綁本機並每次換權杖，但這是單機單人工具。
@@ -104,8 +105,8 @@ README「限制」一節是摘要，這裡列全部：
 
 ### A 必驗
 
-1. 在乾淨資料夾跑 `verify/run_controls.py`，5/5 PASS，數字與 `controls_run.txt` 相符。
-2. 不裝引擎跑 README「先看一次結果」兩行：第一行印出 27 則，第二行開出的校讀頁與 `docs/assets/hero.png` 一致。
+1. 在乾淨資料夾跑 `verify/run_controls.py`，6/6 PASS，數字與 `controls_run.txt` 相符。
+2. 不裝引擎跑 README「先看一次結果」兩行：第一行印出 15 則，第二行開出的校讀頁與 `docs/assets/hero.png` 一致。
 3. 校讀頁網址只在 `127.0.0.1`；Ctrl-C 關掉後重開同網址會失效。
 4. 跑 `setup-runtime.ps1`：先列出下載量與位置並等你確認；拒絕時不寫任何檔案。
 5. 用自己一段短錄音走 intake → decode → plan，輸出落在 `LTM_ROOT`（沒設則家目錄的 `TranscriptDesk`），原檔沒被改。
@@ -114,7 +115,7 @@ README「限制」一節是摘要，這裡列全部：
 ### B 體驗
 
 1. README 首屏能不能一眼看出「它會標出哪幾句不可信、為什麼」。
-2. 校讀頁上一則誤報（例如簡體的「验收」）能不能看懂原因並略過。
+2. 校讀頁上一則誤報（例如「研究系统」被當成「舊系統」）能不能看懂原因並略過；以及 `detect --script hant` 標出的字形段落能不能看懂是「換了字形」、不是「錯了」。
 3. 有 mfp 時，從貼文網址走配方是否順；沒有 mfp 時，文件是否清楚表示那是選用的。
 
 ## 重產 README 圖
@@ -125,6 +126,7 @@ python -m playwright install chromium
 python -X utf8 docs/assets/build_assets.py
 ```
 
-它以唯讀模式啟動 `docs/assets/demo/desk/` 的校讀頁截主圖（並確認頁面顯示 27 則），再從 `FLOW` 表畫流程圖（中英各一張），
+它以唯讀模式啟動 `docs/assets/demo/desk/` 的校讀頁截主圖（並確認頁面顯示的則數等於最新那份 plan 的則數，r002 是 15），再從 `FLOW` 表畫流程圖（中英各一張），
 附幾何自檢（方塊重疊必須為 0）與故意疊在一起的對照（必須大於 0）。示範 run 本身不在這裡重建：那需要原錄音與語音引擎，
 是 `docs/assets/capture_demo_desk.py` 在作者機器上複製一次、把錄音路徑改寫成 `recording/<name>` 的結果。
+r002 例外：它不需要錄音，是 v1.1.0 的程式在示範 desk 的複本上重跑 `ltm detect narration-6c80e41d --rev r000 --lexicon docs/assets/demo/lexicon-campus-systems.json`，再把新增的 `_plans/r002.json`、`_findings/r002.json` 與更新後的 `_origin.json` 複製回來；r001 保留作為 v1.0.0 的結果。

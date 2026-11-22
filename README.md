@@ -17,9 +17,9 @@
 
 [看範例](#一眼看懂) · [用途](#用途適合拿來做什麼) · [用法](#用法) · [從貼文網址開始](#從貼文網址開始選用) · [限制](#限制) · [開發者文件](docs/DEVELOPER.md) · [給 agent 的入口](AGENTS.md) · [版本紀錄](CHANGELOG.md)
 
-<img src="docs/assets/hero.png" alt="ltm 的校讀頁畫面，一份 17 分鐘旁白錄音的檢查結果。左欄是整體判斷：0:00 到 17:16 整段判為中文，兩個獨立訊號的一致程度 1.000，共 483 句。右欄標題寫著 27 則 finding，每則一行時間、句號與證據代碼，下面是那一句逐字稿，可疑的字用黃底標出，例如「三分钟内送出价单」的「价单」、「某些价别」的「价别」、「人士是说」的「人士是」、「開放選客」的「選客」、「都重视两到三次」的「重视」。" width="960">
+<img src="docs/assets/hero.png" alt="ltm 的校讀頁畫面，一份 17 分鐘旁白錄音的檢查結果。左欄是整體判斷：0:00 到 17:16 整段判為中文，兩個獨立訊號的一致程度 1.000，共 483 句。右欄標題寫著 15 則 finding，每則一行時間、句號與證據代碼，下面是那一句逐字稿，可疑的字用黃底標出，例如「三分钟内送出价单」的「价单」、「某些价别」的「价别」、「人士是说」的「人士是」、「開放選客」的「選客」、「都重视两到三次」的「重视」。" width="960">
 
-<sub>上圖由 <code>docs/assets/build_assets.py</code> 啟動本 repo 的 <code>python -m ltm.ui.serve --read-only</code>、用瀏覽器擷取產生。內容是作者自己錄的科普旁白（17 分 16 秒），在作者電腦上實際解碼一次，再給它 15 個從講稿挑出的術語（只給正確寫法，沒有告訴它錯字長什麼樣）。27 則裡真的聽錯的有：假單→「价单」、假別→「价别」、人事→「人士」、選課→「選客」、重試→「重视」、亞穩態→「亚文太」、瑞士起司→「瑞士启示」。<b>也有誤報</b>：引擎中途改用簡體字，所以寫對了的「验收」「学务处」也被標出來，這是目前的限制（見<a href="#限制">限制</a>）。頁面介面是英文，逐字稿是中文。</sub>
+<sub>上圖由 <code>docs/assets/build_assets.py</code> 啟動本 repo 的 <code>python -m ltm.ui.serve --read-only</code>、用瀏覽器擷取產生。內容是作者自己錄的科普旁白（17 分 16 秒），在作者電腦上實際解碼一次，再給它 15 個從講稿挑出的術語（只給正確寫法，沒有告訴它錯字長什麼樣）。這 15 則裡真的聽錯的有：假單→「价单」、假別→「价别」、人事→「人士」、選課→「選客」、重試→「重视」、亞穩態→「亚文太」、瑞士起司→「瑞士启示」。引擎中途改用簡體字輸出，v1.0.0 會把寫對了的簡體詞（「验收」「学务处」等 12 處）也當成音近字標出來；v1.1.0 不再標，只在計畫檔的 <code>passed_over</code> 計數（見<a href="#限制">限制</a>）。留下來的 15 則仍可能有誤報（例如「研究系统」被當成「舊系統」的音近字），標出來就是請你看一眼。頁面介面是英文，逐字稿是中文。</sub>
 
 </div>
 
@@ -55,8 +55,8 @@
 <sub><code>python -m ltm plan narration-6c80e41d</code> 的節錄（示範資料就在 repo 裡）</sub>
 
 ```text
-run narration-6c80e41d revision r001
-  27 finding(s), 0 note(s), 0 proposed edit(s)
+run narration-6c80e41d revision r002
+  15 finding(s), 0 note(s), 0 proposed edit(s)
   [glossary] c50 chars 6-8  entry=1, kind=2, script=1, source=0
       1:48  三分钟内送出[价单]
   [glossary] c183 chars 0-3  entry=11, kind=2, script=1, source=0
@@ -83,7 +83,7 @@ run narration-6c80e41d revision r001
 把下面這段貼給 Claude Code（或其他能讀檔、跑 Python 的 agent）：
 
 ```text
-請讀 https://github.com/WizerdBaChe/local-transcript-kit/tree/v1.0.0 的 AGENTS.md（固定用 v1.0.0 這個版本，不要用 main），照它的步驟：
+請讀 https://github.com/WizerdBaChe/local-transcript-kit/tree/v1.1.0 的 AGENTS.md（固定用 v1.1.0 這個版本，不要用 main），照它的步驟：
 1. 先跑 verify/run_controls.py，把結果和 verify/controls_run.txt 對照後告訴我；
 2. 告訴我語音引擎要下載多少東西、放在哪裡，等我確認再跑 setup-runtime.ps1；
 3. 確認後設定好 ltm，並用 `ltm agent register --dry-run` 給我看它要寫什麼。
@@ -100,7 +100,7 @@ python -m ltm --root docs/assets/demo/desk plan narration-6c80e41d
 python -m ltm.ui.serve --root docs/assets/demo/desk --read-only
 ```
 
-第一行印出上面那 27 則；第二行打開校讀頁（只綁本機 `127.0.0.1`，Ctrl-C 關掉後網址就失效）。
+第一行印出上面那 15 則；第二行打開校讀頁（只綁本機 `127.0.0.1`，Ctrl-C 關掉後網址就失效）。
 
 ### 轉寫你自己的錄音
 
@@ -147,13 +147,15 @@ flowchart LR
 
 </details>
 
-## 這版有什麼（v1.0.0）
+## 這版有什麼（v1.1.0）
 
-- 第一個公開版本：`ltm` 本體（只用 Python 標準函式庫）、測試、agent 契約、`setup-runtime.ps1`。
+- **簡體寫法不再誤報**：引擎中途改用簡體字時，詞表裡的繁體詞若被寫成簡體（验收 對 驗收），`glossary` 不再當成音近字，而是計入 `passed_over["script-variant"]`。規則是單向的：只有「簡體專用字」才視為同一個詞；后、系、价 這類本身也是繁體字的，仍然照標，因為那可能真的是別的詞。示範 run 新增 r002：同一份詞表 15 則（v1.0.0 的 r001 是 27 則，拿掉的 12 則全是簡體寫法）。
+- **新偵測器 `script-switch`**：`detect --script hant|hans`（預設預期繁體，不在預設偵測器裡），標出逐字稿離開預期字形的連續段落並計數；只標、不轉換文字。字形表來自 OpenCC（Apache-2.0），見 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)。
+- 驗收新增 K6（示範錄音上的字形規則，兩面對照）：6 項全過，[`verify/controls_run.txt`](verify/controls_run.txt)。
+- v1.0.0 的內容：`ltm` 本體（只用 Python 標準函式庫）、測試、agent 契約、`setup-runtime.ps1`。
 - **輸出位置不再寫死**：`--root` > 環境變數 `LTM_ROOT` > 家目錄底下的 `TranscriptDesk`。
 - **記下檔案從哪裡來**：`intake --from-url / --from-note`，存在 `_intake/<run>.json` 的 `came_from`；agent 的 JSON 回應只帶筆數，不帶網址。
 - **和 media-fetch-read-kit 的串接配方**：寫成可執行的 `verify/recipe_mfp_to_ltm.py`，用兩份虛構的 mfp 輸出測過（沒有字幕會走到 intake；有上傳者字幕會停在第 2 步）。
-- 驗收 5 項全過（其中 4 項是兩面對照，印出正常與故意弄壞的兩個值）：[`verify/controls_run.txt`](verify/controls_run.txt)。
 
 ## 你想要……就讀……
 
@@ -171,9 +173,9 @@ flowchart LR
 ## 限制
 
 - **它不保證字對**：偵測器只認得「重複」「解碼器自報異常」與「你給的術語的音近字」。一句聽起來怪但不屬於這三類的錯字，它看不到；主圖那份旁白在沒有詞表時是「0 則」，但裡面其實有錯字。
-- **繁簡混雜會造成誤報**：faster-whisper 有時中途改用簡體字輸出，詞表用繁體寫時，寫對的簡體詞也會被當成音近字標出（主圖 27 則裡有一部分是這種）。
+- **繁簡字形只做單向比對**：詞表詞被寫成簡體專用字時會略過並計數；但后、系、价 這類本身也是繁體字的，仍會照標，這是刻意的取捨。`script-switch` 只告訴你哪一段換了字形，不轉換、也不判斷對錯。
 - **同一個檔案解兩次，結果不會一模一樣**：GPU 上的 float16 解碼不是位元可重現的；不要用重跑來「確認」上一次。
-- **公開版的測試涵蓋面比原作者的少**：偵測器的校正測試要用作者的真實錄音量測（別人的講話，不能公開），在這裡不收集，會明列 11 個模組；驗收紀錄寫了實際數字。
+- **公開版的測試涵蓋面比原作者的少**：偵測器的校正測試要用作者的真實錄音量測（別人的講話，不能公開），在這裡不收集，會明列 12 個模組；驗收紀錄寫了實際數字。
 - **只在 Windows 11 + Python 3.12 實測**；語音引擎需要約 3.1 GB 模型，GPU 可選（沒有就改用處理器，慢好幾倍）。
 - **防粗心，不防刻意繞路**：測試擋得住誤改（例如產品裡多一個網路模組）；不是對抗性的安全證明。校讀頁只綁本機、每次啟動換新的權杖，但這是單機單人工具。程式擋與流程擋的對照見 [`docs/EVIDENCE.md`](docs/EVIDENCE.md)。
 - **LLM 校正預設關閉**：原作者的版本可以在你同意後請 Claude 挑選校正；那一步會把可疑句子送出本機，所以每次都要先問，而且不在這份驗收裡。

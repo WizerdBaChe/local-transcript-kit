@@ -9,6 +9,8 @@ author's runtime) and the Hugging Face model page.
 |---|---|---|---|
 | pypinyin 0.55.0 pronunciation data (derived) | `reference-impl/src/ltm/detect/data/syllables.tsv` | MIT (Copyright (c) 2016 mozillazg, 闲耘), as shipped in the 0.55.0 package the table was built from on 2026-10-30 | The full notice ships beside it: `reference-impl/src/ltm/detect/data/NOTICE-pypinyin.txt`. Built by `reference-impl/tools/build_syllables.py` from that package's `pinyin_dict.json`. pypinyin draws its readings from the pinyin-data project; whether every upstream source of that file carries the same terms was not checked. |
 
+| OpenCC dictionaries STCharacters and TWVariants (derived) | `reference-impl/src/ltm/detect/data/simplified_variants.tsv` | Apache-2.0 (OpenCC by BYVoid), as shipped in opencc-python-reimplemented 0.1.7 (Copyright 2016), checked 2026-11-23 against that package's metadata (License: Apache License; LICENSE.txt). Whether the dictionaries inside it carry any further terms than the package licence was not checked | The notice with the full licence text ships beside it: `reference-impl/src/ltm/detect/data/NOTICE-opencc.txt`. Built by `reference-impl/tools/build_simplified_variants.py`: only single-character rows kept, rows whose traditional forms include the character itself dropped, Taiwan variants appended. The product never imports OpenCC and never converts the displayed text. |
+
 Nothing else here is third-party: the product (`reference-impl/src/ltm`) uses the Python standard library only.
 
 ## Downloaded by `setup-runtime.ps1` (not in this repository)

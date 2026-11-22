@@ -1,15 +1,17 @@
 # EVIDENCE — what was measured, what enforces what, what is not claimed
 
-## Measured for this release (2026-11-22, Windows 11, Python 3.12.7)
+## Measured for this release (v1.1.0, 2026-11-23, Windows 11, Python 3.12.7; the demo decode itself dates from 2026-11-22)
 
 | What | Result | Record |
 |---|---|---|
-| Acceptance controls | 5/5 pass | `verify/controls_run.txt` |
-| Shipped test suite (in the controls' scratch copy) | 516 passed, 5 skipped, 0 failed; 11 modules not collected (records not shipped) | `verify/controls_run.txt` K1 |
-| Same suite at the origin, with every record present | 796 passed | origin run before the cut (not re-runnable here) |
+| Acceptance controls | 6/6 pass | `verify/controls_run.txt` |
+| Shipped test suite (in the controls' scratch copy) | 518 passed, 5 skipped, 0 failed; 12 modules not collected (records not shipped) | `verify/controls_run.txt` K1 |
+| Same suite at the origin (commit `e473403`), with every record present | 818 passed | origin run 2026-11-23 before the cut (not re-runnable here) |
 | Fresh clone under an empty home | see file | `verify/fresh_clone_run.txt` |
 | Demo decode: the author's own narration, 17 min 16 s | 483 sentences, one language stretch (zh, agreement 1.000), 0 findings without a lexicon; about 104 s from intake to the first revision on the author's GPU, model load included (the record's `created_at` stamps 09:29:50 and 09:31:34; no separate decode timer is recorded) | `docs/assets/demo/desk/校讀/narration-6c80e41d/` |
-| Same run, `detect` with 15 script terms (correct forms only) | 27 glossary findings; true mishearings include 假單→价单, 假別→价别, 人事→人士, 選課→選客 (several), 重試→重视, 亞穩態→亚文太, 瑞士起司→瑞士启示; false alarms include correct words written in Simplified (验收, 学务处, 旧系统, 选课, 入口网站) | `_findings/r001.json`, `_plans/r001.json` there |
+| Same run, `detect` with 15 script terms (correct forms only), v1.0.0 code (revision r001, kept as the "before") | 27 glossary findings; true mishearings include 假單→价单, 假別→价别, 人事→人士, 選課→選客 (several), 重試→重视, 亞穩態→亚文太, 瑞士起司→瑞士启示; false alarms include correct words written in Simplified (验收, 学务处, 旧系统, 选课, 入口网站) | `_findings/r001.json`, `_plans/r001.json` there |
+| Same `detect`, same lexicon, v1.1.0 code (revision r002, made 2026-11-23 with `ltm detect narration-6c80e41d --rev r000 --lexicon docs/assets/demo/lexicon-campus-systems.json`) | 15 glossary findings; `passed_over` `script-variant` 12; K6 shows 27 again with the rule switched off in the same code. The 12 passed over are exactly the false alarms of r001 (verified by a span comparison of r001 and r002, 12 removed, 0 added). Findings kept include 研究系统 (taken as a sound-alike of 旧系统), which may itself be a false alarm | `_findings/r002.json`, `_plans/r002.json` there; `verify/controls_run.txt` K6 |
+| `script-switch` on the same recording (`detect --script hant` / `hans`, no lexicon) | cues by script hant 68, hans 363, none 52 (sum 483); 2 runs when Traditional is expected, 3 when Simplified is expected | `verify/controls_run.txt` K6 |
 | mfp probe of the same video (public, the author's own) | one video item, sidecar `captions` zh-TW srt, `captionsUnconfirmed` false: the recipe would stop at step 2 for this post | run 2026-11-22, not shipped (the fixtures in `verify/fixtures/` copy its shape with invented ids) |
 
 Numbers from the origin's own design records (cue counts of other recordings, decode variance, compute-type
@@ -28,6 +30,8 @@ costs) are cited by the shipped `reference-impl/README.md` and code comments; th
 | Output root `--root` > `LTM_ROOT` > home | `reference-impl/src/ltm/store/layout.py:32` `default_root`; `reference-impl/tests/test_root.py` | code, K5 |
 | CLI and agent call one function | `reference-impl/tests/test_agentapi_schema.py:168`; `reference-impl/tests/test_two_faces.py:150` (the `agent` namespace imports no store, engine or detector; the other `ui` modules may, `reference-impl/tests/test_layering.py:44`) | code |
 | The review page binds to 127.0.0.1 with a per-launch token | `reference-impl/src/ltm/ui/serve.py:78` `HOST`, :1369 `token_urlsafe(32)`; `reference-impl/tests/test_ui_serve.py:310` | code |
+| A lexicon term in Simplified-only characters is passed over and counted, never a finding; characters that are also Traditional still flag | `reference-impl/src/ltm/detect/soundalike.py:129` `same_word`; `reference-impl/src/ltm/detect/detectors.py:838` (the `passed_over["script-variant"]` count); the pinning tests (`reference-impl/tests/test_glossary.py`) are not collected here | code; checked here by K6 on the demo run, two-sided (rule on 15 findings, off 27) |
+| `script-switch` flags runs of the other Chinese script, counts cues by script and never converts text | `reference-impl/src/ltm/detect/detectors.py:466` `ScriptSwitch`; `reference-impl/src/ltm/detect/scriptform.py:63` `other_runs`; its tests (`reference-impl/tests/test_script_switch.py`) are not collected here | code; K6 prints runs for each expected script (2 vs 3) |
 | The engine's weights are the expected files | `setup-runtime.ps1` SHA-256 table | code (at setup only) |
 | LLM correction runs only after the user says yes, each time | the calling agent (`reference-impl/src/ltm/AGENTS.md` §9a); ltm itself makes no LLM call | process only |
 | Do not accept glossary replacements without the user | `AGENTS.md` adaptation rules | process only |
@@ -37,7 +41,9 @@ costs) are cited by the shipped `reference-impl/README.md` and code comments; th
 ## Not claimed
 
 - That a transcript is correct, or that every error is found: the detectors cover repeats, decoder anomalies and
-  glossary sound-alikes only.
+  glossary sound-alikes only (`script-switch`, opt-in, reports where the script changed, not whether a word is wrong).
+- That every Simplified spelling is passed over: only Simplified-only characters are, by design; a term using 后, 系
+  or 价 (also Traditional characters) can still be flagged.
 - Detector calibration on a public machine: the tests that hold it need the author's measured recordings.
 - Any platform but Windows 11; any Python but 3.12.
 - Bit-reproducible decodes (GPU float16 is not).

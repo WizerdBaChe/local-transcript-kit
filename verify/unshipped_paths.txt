@@ -1,5 +1,5 @@
 # Origin paths that shipped text cites but this repository does not ship. One path per line, a tab, a reason class.
-# Paths only, no content. Produced by the maintainer's path census against the origin (local-transcript-maker @ 0e3728c), 2026-11-22.
+# Paths only, no content. Produced by the maintainer's path census against the origin (local-transcript-maker @ 0e3728c, 2026-11-22; amended for e473403, 2026-11-23).
 # Reason classes:
 #   measured-evidence  a measurement of the author's real recordings (other people's speech), or a script that produced one;
 #                      the code comments cite it as the source of a constant; tests that need it are not collected here
@@ -45,6 +45,9 @@ docs/m1-silence-probe-2026-09-27.md	origin-history
 docs/multilingual-verdict-2026-09-11.md	origin-history
 docs/pim-transcript-tool-2026-09-08.md	origin-history
 docs/prior-art-audio-preprocessing-2026-09-27.md	origin-history
+docs/prior-art-tw-speech-2026-11-23.md	origin-history
+docs/evidence/script_switch_controls_2026-11-23.txt	measured-evidence
+ops/lessons.md	origin-history
 docs/prior-art-threads-six-asr-2026-09-27.md	origin-history
 docs/prior-art-whisper-2026-09-10.md	origin-history
 docs/psm-transcript-tool-2026-09-09.md	origin-history
@@ -54,6 +57,7 @@ docs/verification_pim-v1.2_2026-09-11_K.md	origin-history
 docs/verification_pim-v1.3_2026-09-16_M.md	origin-history
 src/ltm/agentapi/schema.py	shipped-short-form [reference-impl/src/ltm/agentapi/schema.py]
 src/ltm/core/editscript.py	shipped-short-form [reference-impl/src/ltm/core/editscript.py]
+src/ltm/detect/data/NOTICE-opencc.txt	shipped-short-form [reference-impl/src/ltm/detect/data/NOTICE-opencc.txt]
 src/ltm/detect/data/NOTICE-pypinyin.txt	shipped-short-form [reference-impl/src/ltm/detect/data/NOTICE-pypinyin.txt]
 src/ltm/detect/score.py	shipped-short-form [reference-impl/src/ltm/detect/score.py]
 src/ltm/ui/read.py	shipped-short-form [reference-impl/src/ltm/ui/read.py]

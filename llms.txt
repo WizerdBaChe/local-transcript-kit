@@ -2,13 +2,14 @@
 
 > Local speech-to-text on Windows (faster-whisper large-v3 in a separate interpreter) that marks the sentences
 > of a transcript that should not be trusted, and why: repeats, decoder self-reported anomalies, sound-alikes of
-> glossary terms. Standard-library Python product, no network, no LLM call, revisions never overwritten.
-> Release v1.0.0: https://github.com/WizerdBaChe/local-transcript-kit/tree/v1.0.0
+> glossary terms (plus an opt-in detector for runs of the unexpected Chinese script). Standard-library Python
+> product, no network, no LLM call, revisions never overwritten.
+> Release v1.1.0: https://github.com/WizerdBaChe/local-transcript-kit/tree/v1.1.0
 
 ## Read-only route (no execution needed)
 
 - [docs/EVIDENCE.md](docs/EVIDENCE.md): what was measured, the enforcement map (file:line), what is not claimed
-- [verify/controls_run.txt](verify/controls_run.txt): the recorded acceptance run (5 controls)
+- [verify/controls_run.txt](verify/controls_run.txt): the recorded acceptance run (6 controls)
 - [reference-impl/src/ltm/AGENTS.md](reference-impl/src/ltm/AGENTS.md): the calling contract (verbs, responses, invariants)
 - [docs/assets/demo/desk](docs/assets/demo/desk): a real run record (plan, findings, transcript) of the author's own narration
 

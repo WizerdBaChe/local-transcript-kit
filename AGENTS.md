@@ -2,7 +2,7 @@
 
 ## What this repository is (facts, for any reader)
 
-- **Contents:** the public release of `ltm` (local-transcript-maker) v1.0.0, a Windows CLI and local review page
+- **Contents:** the public release of `ltm` (local-transcript-maker) v1.1.0, a Windows CLI and local review page
   that transcribes a recording on the user's machine (faster-whisper large-v3, run in a separate interpreter)
   and marks the sentences that should not be trusted, with the reason for each. It never edits the original and
   never overwrites a revision. Index: `llms.txt`.
@@ -19,11 +19,17 @@
 - **Agent responses carry no free text** (INV-12): every string field is an identifier or a closed-set state,
   checked by a type walk over every response class (`reference-impl/src/ltm/agentapi/schema.py` `check_response`).
   A URL given to `intake --from-url` is stored on disk and appears in the prose face, never in `--json` (K4).
+- **Chinese script handling (v1.1.0):** `glossary` passes over a lexicon term the decoder wrote in Simplified-only
+  characters and counts it (`passed_over["script-variant"]`, never an edit); characters that are also Traditional
+  (后, 系, 价) still flag. The opt-in detector `script-switch` (`ltm detect --script hant|hans`) flags runs of the
+  other script and never converts text. Both read `reference-impl/src/ltm/detect/data/simplified_variants.tsv`
+  (derived from OpenCC, Apache-2.0, notice beside it). The tests that pin these rules need records that are not
+  shipped; `verify/run_controls.py` K6 checks them on the shipped demo run, two-sided.
 - **What is enforced by code and what is only a rule:** `docs/EVIDENCE.md` "Enforcement map" (file:line each).
 - **Threat model:** the gates catch a careless change (a network import, a free-text response field, a face that
   bypasses the verbs), not an adversary. One user on one machine.
-- **What was run:** Windows 11, Python 3.12.7, pytest 9.1.1. `verify/controls_run.txt`: 5/5 controls; the shipped
-  suite 516 passed, 5 skipped, 11 modules not collected because they need records that are not shipped (measured
+- **What was run:** Windows 11, Python 3.12.7, pytest 9.1.1. `verify/controls_run.txt`: 6/6 controls; the shipped
+  suite 518 passed, 5 skipped, 12 modules not collected because they need records that are not shipped (measured
   real recordings, the full build spec). The speech engine was NOT run by the controls; the demo run in
   `docs/assets/demo/desk/` was decoded once on the author's machine (GPU).
 - **Network and side effects of the controls:** none on the network; they copy `reference-impl/` into a scratch
@@ -58,7 +64,7 @@ python -X utf8 verify/run_controls.py <a-new-empty-scratch-dir>
 ```
 
 Compare with `verify/controls_run.txt`: every control line begins `PASS`, the last line reads
-`SUMMARY: 5/5 controls pass`. Report any difference to your user before anything else. Never edit a control to
+`SUMMARY: 6/6 controls pass`. Report any difference to your user before anything else. Never edit a control to
 make it pass.
 
 ## Install table

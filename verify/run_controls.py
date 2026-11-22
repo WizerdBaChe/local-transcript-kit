@@ -17,6 +17,8 @@ for a defective one):
   K4  an agent-facing response carries no free text: the URL appears in the prose face, not in `--json`
       (two-sided)
   K5  output root: `LTM_ROOT` wins; unset, the root is <home>/TranscriptDesk (two values printed)
+  K6  the script rules on the shipped demo recording: glossary findings with the simplified-spelling rule vs
+      with it switched off (two-sided); `script-switch` runs for each expected script (two values printed)
 """
 from __future__ import annotations
 
@@ -133,6 +135,42 @@ without = run(probe, env={k: v for k, v in ENV.items() if k != "LTM_ROOT"}).stdo
 record("K5 output root", Path(with_var) == work / "desk" and Path(without) == HOME / "TranscriptDesk",
        f"LTM_ROOT set -> {Path(with_var).relative_to(work).as_posix()}; unset -> "
        f"{Path(without).relative_to(work).as_posix() if work in Path(without).parents else without}")
+
+# K6 -------------------------------------------------------------------------------------------------
+# The script rules on the shipped demo recording (the test modules that pin them are not collected here).
+# Glossary: the 15-term lexicon over the 483 cues gives 15 findings, 12 simplified spellings passed over;
+# with the one-directional rule switched off in the same code, the 2026-11-22 count (27) comes back.
+# script-switch: the same cues give a different number of runs for each expected script.
+desk6 = work / "k6-desk"
+shutil.copytree(REPO / "docs" / "assets" / "demo" / "desk", desk6)
+LEX = REPO / "docs" / "assets" / "demo" / "lexicon-campus-systems.json"
+RUN6 = "narration-6c80e41d"
+OFF = ("import sys; from ltm.detect import soundalike; soundalike.same_word = lambda w, t: False; "
+       "from ltm.ui import cli; sys.exit(cli.main(sys.argv[1:]))")
+
+
+def detect6(*extra: str, rule_off: bool = False) -> dict:
+    head = [sys.executable, "-c", OFF] if rule_off else [sys.executable, "-m", "ltm"]
+    p = run([*head, "--json", "--root", str(desk6), "detect", RUN6, "--rev", "r000", *extra])
+    try:
+        return json.loads(p.stdout)
+    except json.JSONDecodeError:
+        return {}
+
+
+g_on = detect6("--lexicon", str(LEX))
+g_off = detect6("--lexicon", str(LEX), rule_off=True)
+s_hant, s_hans = detect6("--script", "hant"), detect6("--script", "hans")
+n_on, n_off = g_on.get("findings", {}).get("glossary"), g_off.get("findings", {}).get("glossary")
+passed = g_on.get("passed_over", {}).get("script-variant")
+runs_hant, runs_hans = s_hant.get("findings", {}).get("script-switch"), s_hans.get("findings", {}).get("script-switch")
+cues = {k: int(v) for k, v in s_hant.get("script_cues", {}).items()}
+record("K6 script rules on the demo",
+       (n_on, passed, n_off, runs_hant, runs_hans) == (15, 12, 27, 2, 3)
+       and cues == {"hant": 68, "hans": 363, "none": 52},
+       f"glossary findings {n_on:g} with the rule (passed over {passed:g}), {n_off:g} with it off; "
+       f"script-switch runs {runs_hant:g} expecting hant, {runs_hans:g} expecting hans; "
+       f"cues by script hant/hans/none = {cues.get('hant')}/{cues.get('hans')}/{cues.get('none')}")
 
 n = sum(ok for _, ok in results)
 print(f"SUMMARY: {n}/{len(results)} controls pass")

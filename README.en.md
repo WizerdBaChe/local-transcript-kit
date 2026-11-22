@@ -17,9 +17,9 @@ A machine transcript never raises its hand where it is wrong. `ltm` transcribes 
 
 [Example](#at-a-glance) · [Usage](#usage) · [From a post URL](#starting-from-a-post-url-optional) · [Limits](#limits) · [Developer guide (zh-TW)](docs/DEVELOPER.md) · [For agents](AGENTS.md) · [Changelog](CHANGELOG.md)
 
-<img src="docs/assets/hero.png" alt="The ltm review page for a 17-minute narration. Left panel, the overall verdict: 0:00 to 17:16 is Chinese, the two independent signals agree at 1.000, 483 sentences. Right panel, headed 27 findings: each has a line with the time, sentence number and evidence codes, then the transcript sentence with the suspicious characters highlighted in yellow." width="960">
+<img src="docs/assets/hero.png" alt="The ltm review page for a 17-minute narration. Left panel, the overall verdict: 0:00 to 17:16 is Chinese, the two independent signals agree at 1.000, 483 sentences. Right panel, headed 15 findings: each has a line with the time, sentence number and evidence codes, then the transcript sentence with the suspicious characters highlighted in yellow." width="960">
 
-<sub>Built by <code>docs/assets/build_assets.py</code>, which starts this repo's <code>python -m ltm.ui.serve --read-only</code> and captures it in a browser. The recording is the author's own 17-minute narration (Traditional Chinese), decoded once on the author's machine, then checked against 15 terms taken from the script (correct forms only; the tool was not told what the mistakes look like). Real mishearings among the 27: 假單 heard as 价单, 假別 as 价别, 人事 as 人士, 選課 as 選客, 重試 as 重视, 亞穩態 as 亚文太, 瑞士起司 as 瑞士启示. <b>Some are false alarms</b>: the engine drifted into Simplified characters midway, so correctly heard words written in Simplified are flagged too (see <a href="#limits">Limits</a>). The page UI is English; the transcript is Chinese.</sub>
+<sub>Built by <code>docs/assets/build_assets.py</code>, which starts this repo's <code>python -m ltm.ui.serve --read-only</code> and captures it in a browser. The recording is the author's own 17-minute narration (Traditional Chinese), decoded once on the author's machine, then checked against 15 terms taken from the script (correct forms only; the tool was not told what the mistakes look like). Real mishearings among these 15: 假單 heard as 价单, 假別 as 价别, 人事 as 人士, 選課 as 選客, 重試 as 重视, 亞穩態 as 亚文太, 瑞士起司 as 瑞士启示. The engine drifted into Simplified characters midway; v1.0.0 flagged the correctly heard words written in Simplified (验收, 学务处 and others, 12 places) as sound-alikes, v1.1.0 does not and only counts them under <code>passed_over</code> in the plan file (see <a href="#limits">Limits</a>). The 15 that remain can still contain false alarms (for example 研究系统 taken as a sound-alike of 舊系統); a flag means "take a look". The page UI is English; the transcript is Chinese.</sub>
 
 </div>
 
@@ -34,8 +34,8 @@ A machine transcript never raises its hand where it is wrong. `ltm` transcribes 
 
 ```text
 $ python -m ltm --root docs/assets/demo/desk plan narration-6c80e41d
-run narration-6c80e41d revision r001
-  27 finding(s), 0 note(s), 0 proposed edit(s)
+run narration-6c80e41d revision r002
+  15 finding(s), 0 note(s), 0 proposed edit(s)
   [glossary] c50 chars 6-8  entry=1, kind=2, script=1, source=0
       1:48  三分钟内送出[价单]
 ```
@@ -47,7 +47,7 @@ The glossary that produced it: `docs/assets/demo/lexicon-campus-systems.json` (1
 ### Hand it to your agent
 
 ```text
-Read AGENTS.md at https://github.com/WizerdBaChe/local-transcript-kit/tree/v1.0.0 (pin v1.0.0, not main) and follow it:
+Read AGENTS.md at https://github.com/WizerdBaChe/local-transcript-kit/tree/v1.1.0 (pin v1.1.0, not main) and follow it:
 1. run verify/run_controls.py and compare it with verify/controls_run.txt, then tell me;
 2. tell me what the speech engine will download and where, and wait for my yes before setup-runtime.ps1;
 3. then set up ltm and show me `ltm agent register --dry-run`.
@@ -109,13 +109,15 @@ flowchart LR
 
 </details>
 
-## What's new (v1.0.0)
+## What's new (v1.1.0)
 
-- First public release: `ltm` (standard library only), its tests, the agent contract, `setup-runtime.ps1`.
+- **No more false alarms for Simplified spellings:** when the engine writes a glossary term in Simplified characters (验收 for 驗收), `glossary` no longer reports a sound-alike; it counts it in `passed_over["script-variant"]`. The rule is one-directional: only Simplified-only characters count as the same word; characters that are also Traditional (后, 系, 价) still flag, by design, because they may be a different word. The demo run gains r002: the same glossary gives 15 findings (r001 from v1.0.0 has 27; the 12 removed are all Simplified spellings).
+- **New detector `script-switch`:** `detect --script hant|hans` (expects Traditional by default, not in the default detector set) flags runs of the other Chinese script and counts cues per script; it never converts text. The character table comes from OpenCC (Apache-2.0), see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+- New acceptance control K6 (the script rules on the demo recording, two-sided): 6/6 pass, [`verify/controls_run.txt`](verify/controls_run.txt).
+- v1.0.0 contents: `ltm` (standard library only), its tests, the agent contract, `setup-runtime.ps1`.
 - Output root no longer hard-coded: `--root` > `LTM_ROOT` > `<home>/TranscriptDesk`.
 - `intake --from-url / --from-note` records where a file came from (`came_from` in `_intake/<run>.json`); the JSON response carries only a count.
 - The media-fetch-read-kit recipe as a runnable program, tested on two invented mfp outputs.
-- 5/5 acceptance controls pass, 4 of them two-sided: [`verify/controls_run.txt`](verify/controls_run.txt).
 
 ## You want... read...
 
@@ -132,9 +134,9 @@ flowchart LR
 ## Limits
 
 - **It does not promise correct words.** It recognises repeats, decoder self-reported anomalies and sound-alikes of terms you give it; any other mistake is invisible to it. The hero narration had 0 findings without a glossary and still contains errors.
-- **Mixed Simplified/Traditional output causes false alarms** when the glossary is written in the other script.
+- **Script matching is one-directional:** a glossary term written in Simplified-only characters is passed over and counted; characters that are also Traditional (后, 系, 价) still flag, a deliberate trade-off. `script-switch` only tells you where the script changed; it neither converts nor judges.
 - **Two decodes of one file differ** (GPU float16 is not bit-reproducible); do not re-run to "confirm".
-- **Less test coverage than the origin:** the detector calibration tests need the author's measured real recordings (other people's speech, not publishable); 11 modules are not collected here and are named in the run.
+- **Less test coverage than the origin:** the detector calibration tests need the author's measured real recordings (other people's speech, not publishable); 12 modules are not collected here and are named in the run.
 - **Tested on Windows 11 + Python 3.12 only.** The engine needs a ~3.1 GB model; a GPU is optional (CPU is several times slower).
 - **Catches careless changes, not an adversary.** The review page binds to 127.0.0.1 with a per-launch token; it is a single-user tool. See [`docs/EVIDENCE.md`](docs/EVIDENCE.md).
 - **LLM correction is off by default** and not part of this acceptance; it sends suspicious sentences off the machine, so it asks every time.
