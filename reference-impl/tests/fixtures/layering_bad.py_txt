@@ -1,0 +1,23 @@
+# A deliberately illegal module. NOT named *.py, so neither pytest nor the
+# shipping-file scan picks it up -- an illegal file inside the scanned tree
+# would turn the suite red for the wrong reason.
+#
+# It breaks one rule per line, and `tests/test_layering.py` asserts that EVERY
+# check flags it. A checker never shown a violation is not known to detect one.
+import urllib.request                 # INV-18: a network library outside `ui`
+
+from ltm.store import layout          # INV-15: core may import only core
+import mfp.pipeline                   # R8: the other product, imported
+
+# R8: the other product's on-disk names, as path components and as a literal
+OLD_ROOT = "D:/output/MediaGrabbed/分析"
+CAPTIONS = "字幕檔"
+MARKER = "_source.json"
+
+# core must not become store-shaped: this is the store's own vocabulary as a
+# public name in a core module
+citable = "yes"
+
+
+def fetch(url):
+    return urllib.request.urlopen(url).read()

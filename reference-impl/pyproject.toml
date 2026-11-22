@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-transcript-maker"
+version = "0.1.0.dev0"
+description = "Make a machine transcript's uncertainty visible. Local only."
+requires-python = ">=3.12"
+# The product depends on the standard library ONLY. `faster_whisper` is never
+# imported by product code -- it is reached by running src/ltm/engine/sidecar.py
+# under a separate interpreter (R9), which is what makes INV-18 checkable by an
+# import graph: this package's graph contains no HTTP client because it contains
+# no model runtime at all.
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+ltm = "ltm.ui.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# The agent contract SHIPS. It used to live at the repository root, where an
+# installed `ltm` could not read it -- and copying it into the package at build
+# time would make two copies of one contract, which is the drift this project has
+# been blocked for twice. So there is one file, it is inside the package, and the
+# root `AGENTS.md` is a pointer at it. `ltm agent guide` prints this file;
+# `tests/test_agents_contract.py` checks THIS file against the shipped constants.
+[tool.setuptools.package-data]
+# `glossary` reads its pronunciation table at run time; without it an installed
+# `ltm` fails on the first lexicon. The MIT notice travels with the table.
+ltm = ["AGENTS.md", "detect/data/syllables.tsv", "detect/data/NOTICE-pypinyin.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Registered so that `-m real_sidecar` is a selection and not a typo pytest warns
+# about. The marked test is collected by a plain run too: it self-skips, naming
+# what was missing, and PSM section 12 reads that skip as an INCOMPLETE acceptance
+# rather than a green one.
+markers = [
+    "real_sidecar: spawns the real ASR interpreter and decodes a 60-second clip",
+]

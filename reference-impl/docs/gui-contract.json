@@ -1,0 +1,94 @@
+{
+  "$id": "ltm:gui-contract",
+  "contractVersion": 6,
+  "status": "built",
+  "statusNote": "Written 2026-09-10 BEFORE any interface code exists, because the user ruled that a face wrapped around an unsettled command layer forces both sides to change. Prose half, with the evidence behind every gap: docs/gui-mapping-2026-09-10.md. Measured on three real recordings: docs/first-run-2026-09-10.md. **v3, 2026-09-11**: the loopback face exists (src/ltm/ui/serve.py, PSM section 16 cards F-1..F-6), so `exposure` is no longer a proposal -- every clause in it has a test, with the two controls INV-23 names, in the commit that added the server. Seven of the nine gaps are closed; G-4 and G-5 are open and are named below. The tenth-round hard gate on PIM v1.1 has still NOT been run -- see the change log in the prose half for who decided that and why. **v4, same day**: the research line measured that one field a screen would reach for is a confident wrong answer, so `notAScreenSource` names it and a test enforces it. **v5, 2026-09-16**: E-3 shipped (PSM section 17, cards M-1..M-6) -- `recording.report` carries a fifth field, `multilingual` (true/false, or null for every plan written before it existed). The face reads nothing new: it already takes language from the stretch table, and `notAScreenSource` is unchanged -- with the flag on, `language_detected` is now USUALLY the first window's language rather than occasionally, which is the reason that entry exists.",
+  "purpose": "The sole interface between ltm's verbs and any human-facing surface. A surface reads what this file names and nothing else; it never re-implements a verb and never re-derives a layer.",
+
+  "readSource": {
+    "file": "<root>/校讀/<run>/_plans/<rev>.json",
+    "why": "All four layers, the finding and note rows, and the edit script are already in one file. The human face has no second place to look.",
+    "carries": {
+      "recording.cues[]": ["id", "start", "end", "text", "window_id", "stretch_id"],
+      "recording.windows[]": ["id", "start", "end", "avg_logprob", "temperature", "compression_ratio", "no_speech_prob"],
+      "recording.stretches[]": ["id", "start", "end", "language", "agreement"],
+      "recording.report": ["vad_kept", "vad_enabled", "condition_on_previous_text", "multilingual", "degenerated"],
+      "findings[]": ["id", "code", "unit", "cue_id", "char_start", "char_end", "evidence", "reason"],
+      "notes[]": ["id", "code", "unit", "cue_id", "char_start", "char_end", "evidence", "reason"],
+      "script[]": ["op", "cue_id", "char_start", "char_end", "text", "code", "origin"],
+      "top": ["ops", "unverified", "detectors_skipped", "detectors_failed"]
+    }
+  },
+
+  "joinRule": {
+    "normative": "The string a finding names is cues[cue_id].text[char_start:char_end].",
+    "coordinates": "source coordinates of that cue, per INV-5",
+    "forbidden": [
+      "re-locating a finding by offset into 全文/*.txt (that is a rendering, one lossy step from the thing the span points at)",
+      "recomputing windows from cues, or re-cutting stretches (architecture-2026-09-09.md 1)"
+    ]
+  },
+
+  "notAScreenSource": [
+    {
+      "field": "_origin.json decode.<rev>.language_detected, and the DecodeResponse.language_detected that carries it",
+      "why": "It is faster-whisper's TranscriptionInfo.language, computed BEFORE the decode loop from a single 30-second window (language_detection_segments=1); the per-window detections never write back to it. On a bilingual recording it is confidently wrong: measured 2026-09-11, one recording's transcript went from 88 to 7,290 Chinese characters while this field stayed `en (0.821)` to three decimals (docs/multilingual-verdict-2026-09-11.md 4.1). A surface that printed it would be telling the reader the opposite of what this product exists to say.",
+      "insteadRead": "recording.stretches[].language and .agreement -- the audio-side 30-second cells, which stay honest under the multilingual flag. `undetermined, agreement 0.311` is the correct thing to show for a bilingual recording even once its transcript looks right.",
+      "enforcedBy": "tests/test_ui_serve.py::test_the_face_never_shows_the_engines_first_window_language -- scans every file of the ui package, with a positive control (a line that names the field) and a negative one (a line about the stretch table), then requires the face to still show a language at all.",
+      "scope": "screens only. The field stays in the RECORD, where it is provenance and where the verbs put it; nothing here changes verbs.py or the schema."
+    }
+  ],
+
+  "implementationRules": [
+    "One implementation of every verb: cli.VERBS is verbs.IMPLEMENTATIONS (asserted with `is`).",
+    "One implementation of the argv->kwargs mapping: cli._args_for, covered for all ten verbs by tests/test_two_faces.py.",
+    "One implementation of reading a round's record for a human: src/ltm/ui/read.py. It is NOT in the verb table, and no surface may assemble text from 全文/ or 時軸/ itself, nor parse _plans/*.json itself. It reads the words (cues_of) and the language stretches (stretches_of) out of the same record -- v3, because verbs.show answers only for a DECODE round and came back empty on the detect round a reader actually opens.",
+    "A surface never writes to the store. Every state change goes through a verb."
+  ],
+
+  "exposure": {
+    "invariant": "INV-23 (built 2026-09-11 against the PIM text as of v1.1; that text is UNCHANGED through v1.6 -- verified with `git log -S` on the INV-23 row, not assumed -- so rounds 10 through 13 have now read the same sentence the face was built from and none of them touched it). Narrative snapshot, last re-read 2026-09-16 after round 13.",
+    "bind": "127.0.0.1, ephemeral port, token regenerated per launch",
+    "lifetime": "only while the launching process is alive",
+    "textBearingRoutes": "must be enumerated in a list the tests assert against; a route outside the list must not return Cue.text",
+    "controls": "one unlisted route that deliberately returns text (must be caught) and one listed route (must not be)",
+    "where": "src/ltm/ui/serve.py -- ROUTES is a literal table, TEXT_ROUTES is a module-level frozenset, and _cues_for refuses to read text for a route outside it. **v6 adds JSON_ROUTES beside it and an import-time assertion that the two are DISJOINT**, because the increment that added the decode panel added four JSON routes in one commit and that is the widening INV-23 was written against; tests/test_ui_api.py asserts the same membership question from outside, and the `routes` block in this file is compared with all three lists in both directions by tests/test_gui_contract.py. tests/test_ui_serve.py walks every registered handler: test_positive_control_an_unregistered_route_that_returns_text_is_caught and test_negative_control_no_registered_route_leaks_and_the_listed_one_does_show -- the negative half asserts the listed route DID carry text, so a face that rendered nothing could not pass for a clean one. Verified live too, against a sandbox copy of the real store: an unregistered route with a valid cookie is 404 with no transcript, without a cookie 403, and the listed route returns the words (UAT B-36).",
+    "notInTheList": "the launcher is `python -m ltm.ui.serve`, deliberately not an `ltm serve` subcommand -- an agent cannot reach this face through the verb table because there is no entry to reach it by (PSM section 16.0 (1))."
+  },
+
+  "routesNote": "**Added at v6 (2026-09-16, card GUI-6), and the four api routes are why.** Until v5 this file described the route table in prose (exposure.where) and the only machine-checkable statement about it lived in serve.py. That was survivable while the face had three read-only routes; it stopped being survivable the day the face grew four JSON routes at once, which is the exact shape INV-23 names -- 「多開一條 JSON 路由比較好接」. So the table is enumerated here and tests/test_gui_contract.py compares it with the server in BOTH directions. The direction that finds things is contract->server: a route added to serve.py without a row here is the change nobody wrote down. Every field below is derivable from the server (method from POST_ROUTES, carriesText from TEXT_ROUTES, body from JSON_ROUTES), which is what makes the comparison a comparison and not a second description.",
+  "routes": [
+    {"path": "/", "method": "GET", "carriesText": false, "body": "html",
+     "what": "every run, how far each got, which of them are the same recording, and (since v6) the decode panel. The run ids carry the user's own filenames; a filename is not what INV-23 is about."},
+    {"path": "/run", "method": "GET", "carriesText": true, "body": "html",
+     "what": "one round: the trust card, the findings and the decide form. The ONLY route that may return Cue.text, and the only member of TEXT_ROUTES."},
+    {"path": "/adopt", "method": "POST", "carriesText": false, "body": "html",
+     "what": "accept, with the ticked ops. Redirects to /run; ticking nothing is a DECLINE and writes a revision that changed nothing."},
+    {"path": "/api/intake", "method": "GET", "carriesText": false, "body": "json",
+     "what": "what may be decoded: the runs already registered, plus anything under an --audio-root. Paths, names and sizes -- no durations, because the product measures those with ffprobe at decode time."},
+    {"path": "/api/decode", "method": "POST", "carriesText": false, "body": "json",
+     "what": "start one, in a CHILD process. The offered path must be one this listing just produced (allowlist, src/ltm/ui/sources.py); 403 not-offered otherwise, 409 busy with the running job's id if one is already going."},
+    {"path": "/api/progress", "method": "GET", "carriesText": false, "body": "json",
+     "what": "poll a job: state, phase, done, total, unit, elapsed. Polled at about 1 s (R13). 404 no-such-job for an id from a previous launch, because a job dies with the server."},
+    {"path": "/api/cancel", "method": "POST", "carriesText": false, "body": "json",
+     "what": "ASK a job to stop. It reports the request, never the outcome: the state becomes `cancelling` and only the child's own answer turns it into `cancelled` (R13)."}
+  ],
+
+  "gaps": [
+    {"id": "G-1", "what": "SpanRef drops cue_id; the only locator left is the display string id", "severity": "high", "owner": "user ruling -> PIM amendment", "status": "closed 2026-09-11", "where": "schema.SpanRef.cue_id; tests/test_agentapi_verbs.py::test_a_span_travels_as_a_cue_id_and_not_as_a_display_string"},
+    {"id": "G-2", "what": "no verb returns transcript text (deliberate, INV-12)", "severity": "high", "owner": "settled: ui/read.py", "status": "built 2026-09-11", "where": "src/ltm/ui/read.py; tests/test_ui_read.py -- including the control that shows the forbidden line-offset locator working before an accept and failing after one"},
+    {"id": "G-3", "what": "PlanResponse.ops is a count; what each proposed edit deletes is only in the plan file", "severity": "high", "owner": "user ruling -> PIM amendment", "status": "closed 2026-09-11", "where": "schema.OpRef; tests/test_agentapi_verbs.py::test_plan_returns_the_proposals_accept_indexes_and_never_their_text"},
+    {"id": "G-4", "what": "no response carries cue-level timings", "severity": "medium", "owner": "user ruling", "status": "open, and less urgent again: the browser page now prints a timecode beside every finding, note and proposal. What is still missing is timings in the AGENT response, which is a schema change and therefore a PIM amendment"},
+    {"id": "G-5", "what": "no path serves audio bytes; http.server has zero Range support", "severity": "medium", "owner": "the interface's own build", "status": "open, and deliberately so after the face was built: PSM section 16.0 (5) rules audio OUT of cards F-1..F-6 because docs/first-run-2026-09-10.md section 6 measured that 'listen' is still an ASSUMPTION -- all four findings across 2.5 hours of real recordings were the same sentence 6-8 times, visible in text alone. Ears go in when a case appears that eyes cannot settle"},
+    {"id": "G-6", "what": "evidence names the inputs, not the rule that promoted a candidate (stands_alone)", "severity": "medium", "owner": "cheap fix", "status": "closed 2026-09-11", "where": "detectors.EngineLoop._judge evidence stands_alone; tests/test_detect.py::test_an_engine_loop_finding_says_which_rule_promoted_it -- the frozen decodes are the positive control ONLY (both read 1.0), so the negative control is constructed at Scored"},
+    {"id": "G-7", "what": "artifact filenames claim a language the record says was undetermined", "severity": "medium", "owner": "product defect I-18", "status": "closed 2026-09-11", "where": "layout.filename_language + layout.members_on_disk; tests/test_store.py, both sides of the control"},
+    {"id": "G-8", "what": "same audio under a different filename becomes a second run", "severity": "medium", "owner": "product defect I-19", "status": "closed 2026-09-11", "where": "verbs._run_with_hash + IntakeResponse.recognised/high_water. Verified read-only on the real store: hash 45a0cad2 now resolves to the run holding r012, not the orphan"},
+    {"id": "G-9", "what": "decode says counts and paths, never whether anything was found", "severity": "low", "owner": "cheap fix", "status": "closed 2026-09-11", "where": "DecodeResponse's five summary fields, built from the same plan_obj.summary detect uses"}
+  ],
+  "notClosed": {
+    "hardGate": "**Round ten RAN on 2026-09-11 (`6f941a3`), on PIM v1.2, and returned three BLOCKs -- none of them touches this face.** Verified rather than assumed: grep of both reports (verification_pim-v1.2_2026-09-11_K.md, _L.md) for INV-23, the ui package, the serve module and the card ids returns zero hits; the BLOCKs are the PIM's own §2.1 convergence sentence, an INV-17 shape cited without an `unverified` marker in §5.5, and a `measured_at` claim in the multilingual evidence. So the face does not change with round ten. Those three BLOCKs were answered in PIM v1.3, and rounds 11, 12 and 13 have run since (v1.4, v1.5, v1.6); none of the fourteen BLOCKs across those three rounds touches this face either, which is why this field still says what it said. That work belongs to the research line, not here. The sentence this field used to carry, kept because the risk it names has not expired: PIM v1.1 has not been through its verification round. Everything built on 2026-09-11 -- the six schema items and now the face -- was built from shapes v1.1 states explicitly, each with the controls v1.1 names; the gate is owed on the DOCUMENT and, when it runs, on whether the built code still matches it. **If round 10 changes INV-23, the face changes with it**: that is the risk the user accepted when they ruled the gate must not block the increment (PSM section 16 status block).",
+    "twoFacesOneImplementation": "ADR section 10's action item -- a parameterised test driving all ten verbs from BOTH faces and comparing the schema.Response -- is NOT what was built, because the browser page drives six verbs and not ten. **v6: six, not four.** The page was runs / plan / show-less / accept until 2026-09-16; the decode panel adds `intake` (called in process by /api/decode, because hashing a file is instant and putting it in the child would make a bad path and a bad decode share one exit code) and `decode` (called in a CHILD, by command line, which is a seam this item's parameterised test would not cover anyway -- the child IS the CLI face). The other four have no screen. What holds instead is the identity `cli.VERBS is verbs.IMPLEMENTATIONS` plus tests/test_two_faces.py over the argv seam, and the face calling those same function objects directly. The L-043 hole ADR section 10 is about is narrower here than it was there, and it is not closed."
+  },
+
+  "changeDiscipline": "Bump contractVersion and add a row to the change log in docs/gui-mapping-2026-09-10.md. Do not restate this interface anywhere else. G-1/G-3/G-4 touch the agent schema and must climb the full ladder (PIM amendment -> verification gate) before a work card may use them. **The prose fields are snapshots and they have an owner (added 2026-09-16, round 13 R13a-S4 and its undetermined 2).** exposure.invariant and notClosed.* are written in the present tense about the gate, so they go stale without any structural change to touch them -- which is how this file came to say round ten had not read INV-23 in one field and had run in another. The rule: whoever answers a verification round re-reads every prose field here in the same action as the PIM edit, and stamps the one it re-read. A field with no stamp is a field nobody has owned since it was written. **This does NOT bump contractVersion**, and that is not an oversight -- docs/gui-mapping-2026-09-10.md already ruled it on 2026-09-11 ('the seam did not change, the status did; versioning a status makes the version stop meaning a seam change'). Two readings of one ruling is its own defect, so this clause states which reading holds: the version tracks the SEAM, the stamp tracks the PROSE."
+}

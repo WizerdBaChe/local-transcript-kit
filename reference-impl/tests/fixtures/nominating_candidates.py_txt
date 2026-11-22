@@ -1,0 +1,16 @@
+# The known-false control for `test_candidates_module_cannot_see_s4`.
+#
+# Not a `.py` file: it must never be imported or collected, only PARSED. What it
+# does wrong is the one thing PSM section 6.25 makes structural -- a nomination
+# module that can reach the decoder-state signal. If S4 could nominate, this
+# recording would offer 205 candidates instead of 3.
+#
+# A checker that has never been shown a violation is not known to detect one.
+from __future__ import annotations
+
+from . import signals
+from .thresholds import Thresholds
+
+
+def candidates(cues):
+    return [(i, i, "cue") for i in range(len(cues)) if signals.s4(cues, i, i)]

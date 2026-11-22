@@ -1,0 +1,20 @@
+* text eol=lf
+
+# Binary assets must NOT get the CRLF treatment above. Without this a model
+# file, an icon or a fixture audio clip is rewritten byte-for-byte on
+# checkout -- silently, on a fresh clone only.
+*.png binary
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.exe binary
+*.wav binary
+*.mp3 binary
+*.m4a binary
+*.aac binary
+*.bin binary
+
+# --- CRLF: Windows-native loaders (<CLAUDE_HOME>/rules/line-endings.md, D-075) ---
+*.cmd text eol=crlf

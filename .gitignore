@@ -1,0 +1,38 @@
+# .gitignore born classified -- started from the maintainer's classified ignore template.
+
+# python caches and build output
+# class: regenerable
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# the speech runtime made by setup-runtime.ps1: a venv and about 3.1 GB of model weights
+# class: third-party
+# kind: downloaded-runtime
+reference-impl/runtime/
+
+# OS and editor droppings
+# class: regenerable
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# credentials and local environment
+# class: secret
+.env
+.env.*
+
+# debug and run logs
+# class: regenerable
+# kind: log
+*.log
+
+# scratch output of verify/run_controls.py and docs/assets/build_assets.py (never committed)
+# class: regenerable
+_scratch/
